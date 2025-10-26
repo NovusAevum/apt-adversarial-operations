@@ -1,4 +1,4 @@
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
@@ -20,10 +20,10 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
+# Virtual environments
 venv/
-ENV/
 env/
+ENV/
 .venv
 
 # IDE
@@ -32,7 +32,10 @@ env/
 *.swp
 *.swo
 *~
+
+# OS
 .DS_Store
+Thumbs.db
 
 # Logs
 *.log
@@ -43,29 +46,28 @@ logs/
 *.sqlite
 *.sqlite3
 
-# Secrets & Credentials
-.env
-.env.local
-*.key
+# Secrets and credentials (CRITICAL - NEVER COMMIT)
 *.pem
+*.key
+*.crt
 *.p12
 *.pfx
-config.json
-secrets.yaml
 credentials.json
+secrets.yaml
+.env
+config.ini
 api_keys.txt
 
-# C2 Infrastructure
+# C2 infrastructure data
 c2_database.db
-beacons/
-implants/*.exe
-implants/*.dll
-payloads/compiled/*
+beacon_data/
+session_logs/
 
-# Reconnaissance Results
+# Operational data
 recon_results/
-*.pcap
-*.cap
+loot/
+screenshots/
+keylog*.txt
 
 # Testing
 .pytest_cache/
@@ -73,30 +75,18 @@ recon_results/
 htmlcov/
 .tox/
 
-# OS
-Thumbs.db
-.DS_Store
-
-# Sensitive Data
-exfiltrated_data/
-collected_credentials/
-harvested_emails.txt
-password_dumps/
-
-# Compiled Binaries
-*.exe
-*.dll
-*.so
-*.dylib
-*.bin
-
-# Archives
-*.zip
-*.tar
-*.tar.gz
-*.rar
-*.7z
-
-# Documentation Build
+# Documentation build
 site/
 docs/_build/
+
+# Large files
+*.pcap
+*.dmp
+*.iso
+*.vmdk
+*.img
+
+# Sensitive lab data
+*.ovpn
+lab_configs/
+target_data/
