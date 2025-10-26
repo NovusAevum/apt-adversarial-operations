@@ -1,0 +1,102 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets & Credentials
+.env
+.env.local
+*.key
+*.pem
+*.p12
+*.pfx
+config.json
+secrets.yaml
+credentials.json
+api_keys.txt
+
+# C2 Infrastructure
+c2_database.db
+beacons/
+implants/*.exe
+implants/*.dll
+payloads/compiled/*
+
+# Reconnaissance Results
+recon_results/
+*.pcap
+*.cap
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Sensitive Data
+exfiltrated_data/
+collected_credentials/
+harvested_emails.txt
+password_dumps/
+
+# Compiled Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Documentation Build
+site/
+docs/_build/
