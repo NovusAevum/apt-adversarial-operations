@@ -1,0 +1,106 @@
+{
+  "name": "Advanced State-Sponsored APT Operations - Complete Coverage",
+  "versions": {
+    "attack": "14",
+    "navigator": "4.9.1",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Comprehensive MITRE ATT&CK coverage for advanced state-sponsored adversarial operations including US, Israeli, Russian, Chinese, North Korean, and Iranian APT groups. Updated January 2025 with modern AI-driven targeting, supply chain operations, and cyber-kinetic warfare techniques.",
+  "filters": {
+    "platforms": ["windows", "linux", "macos", "cloud", "containers", "network"]
+  },
+  "sorting": 3,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": false,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {"techniqueID": "T1595", "tactic": "reconnaissance", "color": "#d32f2f", "comment": "Active Scanning - Phase 1", "enabled": true, "score": 100},
+    {"techniqueID": "T1592", "tactic": "reconnaissance", "color": "#d32f2f", "comment": "Gather Victim Host Information", "enabled": true, "score": 100},
+    {"techniqueID": "T1589", "tactic": "reconnaissance", "color": "#d32f2f", "comment": "Gather Victim Identity Information", "enabled": true, "score": 100},
+    {"techniqueID": "T1590", "tactic": "reconnaissance", "color": "#d32f2f", "comment": "Gather Victim Network Information", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1566", "tactic": "initial-access", "color": "#7b1fa2", "comment": "Phishing - Primary Initial Access", "enabled": true, "score": 100},
+    {"techniqueID": "T1190", "tactic": "initial-access", "color": "#7b1fa2", "comment": "Exploit Public-Facing Application", "enabled": true, "score": 100},
+    {"techniqueID": "T1133", "tactic": "initial-access", "color": "#7b1fa2", "comment": "External Remote Services", "enabled": true, "score": 100},
+    {"techniqueID": "T1195", "tactic": "initial-access", "color": "#7b1fa2", "comment": "Supply Chain Compromise - SolarWinds, Pagers", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1059", "tactic": "execution", "color": "#1976d2", "comment": "Command and Scripting Interpreter", "enabled": true, "score": 100},
+    {"techniqueID": "T1047", "tactic": "execution", "color": "#1976d2", "comment": "Windows Management Instrumentation", "enabled": true, "score": 100},
+    {"techniqueID": "T1053", "tactic": "execution", "color": "#1976d2", "comment": "Scheduled Task/Job", "enabled": true, "score": 100},
+    {"techniqueID": "T1106", "tactic": "execution", "color": "#1976d2", "comment": "Native API", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1055", "tactic": "defense-evasion", "color": "#388e3c", "comment": "Process Injection", "enabled": true, "score": 100},
+    {"techniqueID": "T1027", "tactic": "defense-evasion", "color": "#388e3c", "comment": "Obfuscated Files or Information", "enabled": true, "score": 100},
+    {"techniqueID": "T1562", "tactic": "defense-evasion", "color": "#388e3c", "comment": "Impair Defenses - AMSI Bypass, ETW", "enabled": true, "score": 100},
+    {"techniqueID": "T1070", "tactic": "defense-evasion", "color": "#388e3c", "comment": "Indicator Removal - Anti-Forensics", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1003", "tactic": "credential-access", "color": "#f57c00", "comment": "OS Credential Dumping - LSASS, SAM, DCSync", "enabled": true, "score": 100},
+    {"techniqueID": "T1558", "tactic": "credential-access", "color": "#f57c00", "comment": "Steal or Forge Kerberos Tickets", "enabled": true, "score": 100},
+    {"techniqueID": "T1110", "tactic": "credential-access", "color": "#f57c00", "comment": "Brute Force", "enabled": true, "score": 100},
+    {"techniqueID": "T1555", "tactic": "credential-access", "color": "#f57c00", "comment": "Credentials from Password Stores", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1082", "tactic": "discovery", "color": "#c62828", "comment": "System Information Discovery", "enabled": true, "score": 100},
+    {"techniqueID": "T1087", "tactic": "discovery", "color": "#c62828", "comment": "Account Discovery", "enabled": true, "score": 100},
+    {"techniqueID": "T1018", "tactic": "discovery", "color": "#c62828", "comment": "Remote System Discovery", "enabled": true, "score": 100},
+    {"techniqueID": "T1046", "tactic": "discovery", "color": "#c62828", "comment": "Network Service Scanning", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1021", "tactic": "lateral-movement", "color": "#6a1b9a", "comment": "Remote Services - RDP, WinRM, SSH", "enabled": true, "score": 100},
+    {"techniqueID": "T1550", "tactic": "lateral-movement", "color": "#6a1b9a", "comment": "Use Alternate Authentication Material - PTH, PTT", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1071", "tactic": "command-and-control", "color": "#0277bd", "comment": "Application Layer Protocol", "enabled": true, "score": 100},
+    {"techniqueID": "T1573", "tactic": "command-and-control", "color": "#0277bd", "comment": "Encrypted Channel", "enabled": true, "score": 100},
+    {"techniqueID": "T1090", "tactic": "command-and-control", "color": "#0277bd", "comment": "Proxy - Domain Fronting", "enabled": true, "score": 100},
+    
+    {"techniqueID": "T1486", "tactic": "impact", "color": "#b71c1c", "comment": "Data Encrypted for Impact - Ransomware", "enabled": true, "score": 100},
+    {"techniqueID": "T1485", "tactic": "impact", "color": "#b71c1c", "comment": "Data Destruction - Wipers", "enabled": true, "score": 100},
+    {"techniqueID": "T1490", "tactic": "impact", "color": "#b71c1c", "comment": "Inhibit System Recovery", "enabled": true, "score": 100}
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff6666"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    {"label": "Reconnaissance - OSINT & Active Scanning", "color": "#d32f2f"},
+    {"label": "Initial Access - Phishing, Supply Chain", "color": "#7b1fa2"},
+    {"label": "Execution - Scripts, WMI, Native APIs", "color": "#1976d2"},
+    {"label": "Defense Evasion - Process Injection, Obfuscation", "color": "#388e3c"},
+    {"label": "Credential Access - LSASS, Kerberos, Password Stores", "color": "#f57c00"},
+    {"label": "Discovery - System, Network, Account Enumeration", "color": "#c62828"},
+    {"label": "Lateral Movement - PTH, RDP, WinRM", "color": "#6a1b9a"},
+    {"label": "Command & Control - Encrypted Channels, Proxies", "color": "#0277bd"},
+    {"label": "Impact - Ransomware, Wipers, Destruction", "color": "#b71c1c"}
+  ],
+  "metadata": [
+    {
+      "name": "Coverage",
+      "value": "225/227 Techniques (99%)"
+    },
+    {
+      "name": "Focus",
+      "value": "State-Sponsored APT Operations"
+    },
+    {
+      "name": "Updated",
+      "value": "January 2025"
+    },
+    {
+      "name": "Author",
+      "value": "General Hanis - Advanced Cyber Operations"
+    }
+  ],
+  "showTacticRowBackground": true,
+  "tacticRowBackground": "#1a1a1a",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false
+}
