@@ -378,23 +378,23 @@ This is an automated message. Please do not reply.
         compromise_rate = (compromised / emails_sent * 100) if emails_sent > 0 else 0
         
         report = f'''
-╔══════════════════════════════════════════════════════════╗
-║           PHISHING CAMPAIGN REPORT                        ║
-╠══════════════════════════════════════════════════════════╣
-║ Campaign: {self.campaign_name:<45} ║
-║                                                          ║
-║ METRICS:                                                 ║
-║ Total Targets:        {total_targets:<6} (100.0%)                    ║
-║ Emails Sent:          {emails_sent:<6} ({emails_sent/total_targets*100:>5.1f}%)                   ║
-║ Emails Opened:        {emails_opened:<6} ({open_rate:>5.1f}%)                   ║
-║ Links Clicked:        {links_clicked:<6} ({click_rate:>5.1f}%)                   ║
-║ Targets Compromised:  {compromised:<6} ({compromise_rate:>5.1f}%)                   ║
-║                                                          ║
-║ EFFECTIVENESS:                                           ║
-║ Open Rate:    {open_rate:>6.1f}%                                      ║
-║ Click Rate:   {click_rate:>6.1f}%                                      ║
-║ Success Rate: {compromise_rate:>6.1f}%                                      ║
-╚══════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║           PHISHING CAMPAIGN REPORT                                                ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ Campaign: {self.campaign_name:<45}                                                ║
+║                                                                                   ║
+║ METRICS:                                                                          ║
+║ Total Targets:        {total_targets:<6} (100.0%)                                 ║
+║ Emails Sent:          {emails_sent:<6} ({emails_sent/total_targets*100:>5.1f}%)   ║
+║ Emails Opened:        {emails_opened:<6} ({open_rate:>5.1f}%)                     ║
+║ Links Clicked:        {links_clicked:<6} ({click_rate:>5.1f}%)                    ║
+║ Targets Compromised:  {compromised:<6} ({compromise_rate:>5.1f}%)                 ║
+║                                                                                   ║
+║ EFFECTIVENESS:                                                                    ║
+║ Open Rate:    {open_rate:>6.1f}%                                                  ║
+║ Click Rate:   {click_rate:>6.1f}%                                                 ║
+║ Success Rate: {compromise_rate:>6.1f}%                                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
         '''
         return report
 
@@ -709,20 +709,20 @@ class CredentialStuffer:
     def generate_report(self) -> str:
         """Generate detailed attack report"""
         report = f"""
-╔════════════════════════════════════════════════════════════╗
-║        CREDENTIAL STUFFING CAMPAIGN REPORT                 ║
-╠════════════════════════════════════════════════════════════╣
-║ Target: {self.target_url:<50} ║
-║ Attack Date: {time.strftime('%Y-%m-%d %H:%M:%S'):<42} ║
-║                                                            ║
-║ STATISTICS:                                                ║
-║ Credentials Tested:     {len(self.credentials):<6}                        ║
-║ Successful Logins:      {self.successful_attempts:<6}                        ║
-║ Failed Attempts:        {self.failed_attempts:<6}                        ║
-║ Success Rate:           {(self.successful_attempts/max(len(self.credentials),1)*100):>5.2f}%                       ║
-║                                                            ║
-║ VALID CREDENTIALS FOUND:                                   ║
-╠════════════════════════════════════════════════════════════╣
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════╗
+║        CREDENTIAL STUFFING CAMPAIGN REPORT                                                        ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║ Target: {self.target_url:<50}                                                                     ║
+║ Attack Date: {time.strftime('%Y-%m-%d %H:%M:%S'):<42}                                             ║
+║                                                                                                   ║
+║ STATISTICS:                                                                                       ║
+║ Credentials Tested:     {len(self.credentials):<6}                                                ║
+║ Successful Logins:      {self.successful_attempts:<6}                                             ║
+║ Failed Attempts:        {self.failed_attempts:<6}                                                 ║
+║ Success Rate:           {(self.successful_attempts/max(len(self.credentials),1)*100):>5.2f}%      ║
+║                                                                                                   ║
+║ VALID CREDENTIALS FOUND:                                                                          ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════╣
 """
         
         for username, password in self.valid_credentials:
