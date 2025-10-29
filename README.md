@@ -1,470 +1,641 @@
-# Advanced State-Sponsored Adversarial Operations
+# 🎯 Advanced State-Sponsored Adversarial Operations
+### Enterprise-Grade APT Techniques & Tradecraft Documentation
 
-> **First comprehensive public documentation of modern nation-state cyber operations with complete technical depth, working implementations, and defensive countermeasures.**
+<div align="center">
 
-A technical resource documenting advanced persistent threat (APT) tactics, techniques, and procedures employed by nation-state actors. This repository provides unprecedented insight into state-sponsored cyber operations including Israeli AI-driven warfare systems, supply chain interdiction, industrial sabotage, and modern targeting methodologies.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CEH v12](https://img.shields.io/badge/CEH-v12-red.svg)](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/)
+[![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange.svg)](https://attack.mitre.org/)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Documentation](https://img.shields.io/badge/docs-comprehensive-brightgreen.svg)](docs/)
 
-## What Makes This Unique
-
-This is not another penetration testing tutorial repository. This documents actual state-sponsored techniques with:
-
-- **Working code implementations** of sophisticated malware and exploitation techniques
-- **Complete technical breakdowns** of real operations (Stuxnet, Hezbollah pagers, SolarWinds)
-- **First public documentation** of Israeli AI warfare systems (Gospel, Lavender, Alchemist)
-- **Modern 2024-2025 operations** including September 2025 Iran-Israel conflict
-- **Production-grade tools** not proof-of-concept demonstrations
-- **Defensive strategies** for every offensive technique documented
-
-**Target Audience**: Security professionals, threat intelligence analysts, red team operators, blue team defenders, academic researchers, and policymakers seeking to understand modern cyber warfare capabilities.
-
-## Repository Contents
-
-### Technical Documentation
-
-Complete attack lifecycle documentation organized by MITRE ATT&CK phases:
-
-**[Phase 1: Reconnaissance](docs/01-reconnaissance)** - OSINT techniques, network scanning, infrastructure mapping, target profiling
-
-**[Phase 2: Initial Access](docs/02-initial-access)** - Phishing campaigns, exploitation, supply chain compromise, trusted relationship abuse
-
-**[Phase 3: Execution & Persistence](docs/03-execution-persistence)** - Command execution methods, WMI, PowerShell, scheduled tasks, multi-platform persistence
-
-**[Phase 4: Privilege Escalation](docs/04-privilege-escalation)** - Kernel exploitation, token manipulation, DLL hijacking, UAC bypass
-
-**[Phase 5: Defense Evasion](docs/05-defense-evasion)** - Process injection, obfuscation, anti-forensics, EDR bypass techniques
-
-**[Phase 6: Credential Access](docs/06-credential-access)** - LSASS dumping, Kerberos attacks, DCSync, NTLM relay, credential harvesting
-
-**[Phase 7: Discovery](docs/07-discovery)** - System enumeration, network discovery, security software detection
-
-**[Phase 8: Collection & Exfiltration](docs/08-collection-exfiltration)** - Data gathering, screenshot capture, keylogging, covert exfiltration channels
-
-**[Phase 9: Command & Control](docs/09-command-control)** - C2 infrastructure, encrypted communications, domain fronting, protocol tunneling
-
-**[Phase 10: Impact & Cleanup](docs/10-impact-cleanup)** - Ransomware, wipers, destructive operations, anti-forensics, evidence removal
-
-### Operational Tools
-
-Production-ready security tools implementing state-sponsored techniques:
-
-**Reconnaissance Suite**
-- `subdomain_enum.py` - Multi-threaded subdomain enumeration
-- `dns_recon.py` - DNS reconnaissance with certificate transparency
-- `port_scanner.py` - Advanced network service discovery
-- `ai_recon_system.py` - AI-powered target intelligence aggregation
-
-**Command & Control Framework**
-- `c2_server.py` - Encrypted C2 server with agent management
-- `beacon.py` - Lightweight agent beacon implementation  
-- `agent.py` - Full-featured agent with multi-protocol support
-
-**Exploitation & Persistence**
-- `auto_exploit.py` - Automated CVE-based exploitation
-- `persistence_manager.py` - Multi-method persistence framework
-
-**Advanced Utilities**
-- `quantum_crypto_toolkit.py` - Post-quantum cryptography implementations
-- `airgap_toolkit.py` - Air-gap jumping techniques (acoustic, EM, thermal, USB)
-- `log_cleaner.py` - Anti-forensics log manipulation
-- `polymorphic_generator.py` - Dynamic payload generation
-
-### Intelligence Resources
-
-**[Advanced APT Groups Analysis](resources/advanced-apt-groups.md)** - Comprehensive nation-state actor profiles:
-
-🇺🇸 **United States** - NSA Tailored Access Operations, Stuxnet technical deep-dive with complete PLC manipulation code, QUANTUM backbone interception
-
-🇮🇱 **Israel** - Unit 8200 operations, 2024 Hezbollah pager supply chain attack, AI warfare systems (Gospel, Lavender, Alchemist, "Where is Daddy?"), September 2025 Iran-Israel operations
-
-🇷🇺 **Russia** - APT28/APT29, NotPetya destructive wiper, Solar
-
-Winds supply chain, election interference operations
-
-🇨🇳 **China** - APT1/APT41, Salt Typhoon telecommunications breach, Cloud Hopper MSP compromise, extensive intellectual property theft
-
-🇰🇵 **North Korea** - Lazarus Group, Sony Pictures breach, Bangladesh Bank heist, WannaCry ransomware, cryptocurrency exchange targeting
-
-🇮🇷 **Iran** - APT33/APT34, critical infrastructure reconnaissance, retaliatory operations, September 2025 conflict techniques
-
-**[MITRE ATT&CK Mapping](resources/mitre-mapping.md)** - Complete coverage of 225/227 techniques across all tactics
-
-**[Detection Rules](resources/detection-rules.md)** - YARA malware signatures, Sigma SIEM rules, Suricata network signatures
-
-**[APT Case Studies](resources/apt-case-studies.md)** - Detailed operational analysis of historical campaigns
-
-**[Attack Navigator Layer](resources/attack-navigator-layer.json)** - Visual MITRE ATT&CK coverage for Navigator tool
-
-### Practical Exercises
-
-**[Practice Scenarios](labs/practice-scenarios)** - Guided hands-on exercises progressing from reconnaissance through full APT campaign simulation
-
-## Featured Operations
-
-### Israeli AI-Driven Warfare (2024-2025)
-
-First comprehensive public documentation of operational AI targeting systems transforming modern warfare:
-
-**The Gospel** - AI target generation system processing petabytes of intelligence to automatically identify 100+ targets daily compared to 50 targets yearly through traditional human analysis. Implements computer vision, natural language processing, and behavioral analysis for automated military target discovery.
-
-**Lavender** - Individual tracking AI monitoring 37,000 combatants simultaneously with 85% location prediction accuracy using facial recognition, pattern-of-life analysis, and predictive modeling for precision strike planning.
-
-**Alchemist** - Algorithmic collateral damage calculator automating civilian casualty decisions with tier-based acceptable loss thresholds (15-100+ civilians depending on target value), removing human ethical consideration from targeting process.
-
-**"Where is Daddy?"** - Family tracking system deliberately targeting individuals at home locations when family members present, representing the most controversial aspect of algorithmic warfare.
-
-**Operational Impact**: October 2024 Gaza operations demonstrated 10x increase in operational tempo with hundreds of strikes daily compared to dozens in previous conflicts, thousands of targets processed, and fundamental shift from human-driven to AI-driven warfare.
-
-[Complete 400-line technical analysis available](resources/advanced-apt-groups.md)
-
-### 2024 Hezbollah Pager Operation
-
-Three-year supply chain infiltration resulting in simultaneous detonation of thousands of explosive-modified communication devices:
-
-**Setup**: Establishment of BAC Consulting front company as authorized distributor, interception and modification of 3,000-5,000 pagers with PETN explosives, devices functioned normally for years building operational trust, remote detonation capability via specific page sequence.
-
-**Execution**: September 17, 2024 at 15:30 local time, simultaneous detonation across Lebanon, 3,000+ casualties with 12+ killed, psychological warfare impact creating fear of all technology, demonstration of complete supply chain penetration capability.
-
-**Significance**: Represents new paradigm in cyber-physical warfare combining patient multi-year operations, supply chain mastery, surgical execution, and strategic psychological impact.
-
-[Complete 300-line technical breakdown available](resources/advanced-apt-groups.md)
-
-### September 2025 Iran-Israel Conflict
-
-12-day war demonstrating integration of AI-enabled cyber operations with kinetic military strikes:
-
-**Cyber Component**: AI-driven target identification and strike planning, Iranian critical infrastructure reconnaissance and attacks, Israeli precision targeting with Gospel/Lavender systems, thousands of targets processed and engaged, complete transformation of operational tempo.
-
-**Scale**: Thousands of Iranian casualties, hundreds of Israeli casualties, extensive infrastructure damage, AI systems proved decisive operational advantage, validation of AI-warfare transformation.
-
-**Strategic Implications**: Demonstrated modern warfare's evolution where AI systems generate targets faster than humans can review, operational tempo increased 10x over previous conflicts, human oversight reduced to seconds per target approval.
-
-[Detailed analysis available](resources/advanced-apt-groups.md)
-
-### Operation Stuxnet (2010)
-
-First cyber weapon causing physical destruction - complete technical analysis:
-
-**Zero-Day Arsenal**: Four simultaneous zero-day exploits (CVE-2010-2568 LNK, CVE-2010-2729 keyboard, CVE-2010-2743 task scheduler, CVE-2010-3888 kernel) with complete exploitation code and explanations.
-
-**Supply Chain Compromise**: Stolen Realtek and JMicron digital certificates enabling signed kernel-mode rootkit installation, suggesting sophisticated Taiwanese tech hub penetration.
-
-**PLC Weapon**: Targeted manipulation of Siemens S7 controllers controlling Iranian centrifuges, alternating speed increase (1,410 Hz causing mechanical stress) and rapid cycling (2 Hz thermal shock), simultaneous sensor data replay hiding attacks from operators.
-
-**Impact**: 1,000+ centrifuges destroyed out of 5,000 total, Iranian nuclear program delayed 2-3 years, proof of concept for cyber weapons causing physical destruction without kinetic military action.
-
-[Complete 200-line technical deep-dive with code](resources/advanced-apt-groups.md)
-
-## Learning Paths
-
-### Beginner Track
-1. Start with [Reconnaissance fundamentals](docs/01-reconnaissance) to understand information gathering
-2. Read [APT Case Studies](resources/apt-case-studies.md) for operational context  
-3. Study [Initial Access techniques](docs/02-initial-access) with detailed explanations
-4. Practice [guided lab scenarios](labs/practice-scenarios) with step-by-step walkthroughs
-
-### Practitioner Track
-1. Review [MITRE ATT&CK Mapping](resources/mitre-mapping.md) for complete technique coverage
-2. Analyze [Advanced APT Groups](resources/advanced-apt-groups.md) for state-sponsored TTPs
-3. Study tool implementations for production-grade code examples
-4. Implement [detection rules](resources/detection-rules.md) in defensive infrastructure
-
-### Advanced Track
-1. Deep-dive [Israeli AI warfare systems](resources/advanced-apt-groups.md) for cutting-edge capabilities
-2. Implement [quantum-resistant cryptography](tools/utilities/quantum_crypto_toolkit.py) for future-proof operations
-3. Master [air-gap exfiltration techniques](tools/utilities/airgap_toolkit.py) with multiple covert channels
-4. Build custom C2 infrastructure using [framework components](tools/c2-framework)
-
-## Installation & Usage
-
-### Prerequisites
-- Operating System: Linux (Kali, Ubuntu, Debian), macOS, or Windows 10/11
-- Python 3.9 or higher
-- 8GB RAM minimum
-- 10GB free storage
-- Unrestricted internet access for OSINT tools
-
-### Quick Start
-
-```bash
-# Clone repository
-git clone https://github.com/NovusAevum/apt-adversarial-operations.git
-cd apt-adversarial-operations
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Verify installation
-python3 tools/reconnaissance/subdomain_enum.py --help
-```
-
-### Example Usage
-
-```bash
-# Reconnaissance
-python3 tools/reconnaissance/subdomain_enum.py example.com
-python3 tools/reconnaissance/ai_recon_system.py
-
-# C2 Operations (authorized testing only)
-python3 tools/c2-framework/c2_server.py
-python3 tools/c2-framework/beacon.py --server 192.168.1.100
-
-# Advanced Capabilities
-python3 tools/utilities/quantum_crypto_toolkit.py
-python3 tools/utilities/airgap_toolkit.py
-```
-
-## MITRE ATT&CK Coverage
-
-Complete mapping of 225 out of 227 techniques (99% coverage):
-
-```
-Reconnaissance:        14/14 techniques (100%)
-Resource Development:   7/7 techniques (100%)
-Initial Access:         9/9 techniques (100%)
-Execution:            13/13 techniques (100%)
-Persistence:          19/19 techniques (100%)
-Privilege Escalation: 13/13 techniques (100%)
-Defense Evasion:      42/42 techniques (100%)
-Credential Access:    17/17 techniques (100%)
-Discovery:            30/30 techniques (100%)
-Lateral Movement:      9/9 techniques (100%)
-Collection:           17/17 techniques (100%)
-Command and Control:  16/16 techniques (100%)
-Exfiltration:          9/9 techniques (100%)
-Impact:               13/13 techniques (100%)
-───────────────────────────────────────────────
-Total: 225/227 techniques documented (99%)
-```
-
-[Interactive ATT&CK Navigator visualization available](resources/attack-navigator-layer.json)
-
-## Detection & Defense
-
-Every offensive technique includes comprehensive defensive coverage:
-
-- **Detection Methods** - SIEM correlation rules and behavioral indicators
-- **YARA Rules** - Host-based malware detection signatures
-- **Sigma Rules** - Platform-agnostic SIEM detection rules
-- **Suricata Rules** - Network-based intrusion detection signatures
-- **Mitigation Strategies** - Preventive security controls
-- **Response Procedures** - Incident response recommendations
-
-Complete detection rule set available in [resources/detection-rules.md](resources/detection-rules.md)
-
-## Legal & Ethical Framework
-
-### Authorized Use
-
-This repository is provided exclusively for:
-- **Educational purposes** in accredited security programs
-- **Authorized penetration testing** with explicit written permission
-- **Security research** and defensive capability development
-- **Threat intelligence analysis** and adversary understanding
-
-### Prohibited Use
-
-Content must NOT be used for:
-- Unauthorized system access or network intrusion
-- Malicious purposes or criminal activity
-- Privacy violations or unauthorized surveillance
-- Any activity violating local, national, or international law
-
-### Authorization Requirements
-
-Before employing any technique or tool:
-1. Obtain explicit written authorization from system owner
-2. Define clear scope, boundaries, and rules of engagement
-3. Establish legal liability protection
-4. Document all activities for accountability
-5. Ensure compliance with applicable laws and regulations
-
-### International Legal Considerations
-
-- **United States**: Computer Fraud and Abuse Act - Unauthorized access punishable by up to 20 years imprisonment
-- **European Union**: GDPR Article 32 - Security violations up to €20M or 4% global revenue
-- **United Kingdom**: Computer Misuse Act 1990 - Unauthorized access up to 10 years imprisonment
-- **Malaysia**: Communications and Multimedia Act 1998 - RM50,000 fine and 1 year imprisonment
-- **Global**: Unauthorized computer access illegal in 190+ countries worldwide
-
-See [DISCLAIMER.md](DISCLAIMER.md) for complete legal guidance.
-
-## Contributing
-
-Contributions welcome from security professionals and researchers:
-
-**Technical Contributions**
-- New APT techniques and operational methodologies
-- Updated threat intelligence and contemporary operations
-- Tool enhancements and new capability development
-- Detection rule improvements and signature updates
-
-**Documentation Contributions**
-- Clarity improvements and technical accuracy corrections
-- Additional case studies and operational analysis
-- Translation to other languages
-- Diagram and visualization enhancements
-
-**Research Contributions**
-- Novel attack techniques and methodologies
-- Defensive strategies and countermeasures
-- Forensic analysis methods and indicators
-- Attribution techniques and actor profiling
-
-### Contribution Process
-
-1. Fork the repository
-2. Create descriptive feature branch
-3. Implement changes with comprehensive testing
-4. Update documentation for all changes
-5. Submit pull request with detailed description
-
-### Code Standards
-
-- Production-quality implementation with comprehensive error handling
-- Detailed inline documentation explaining logic and operational context
-- Security best practices and operational security considerations
-- No backdoors, malicious code, or intentional vulnerabilities
-- Compliance with ethical guidelines and legal frameworks
-- PEP 8 style guide for Python code
-- Clear commit messages following conventional commits specification
-
-## Acknowledgments
-
-This research builds upon work from:
-- MITRE Corporation for ATT&CK framework development
-- Global threat intelligence community
-- Security researchers and academic institutions
-- Whistleblowers revealing state-sponsored capabilities
-- Open-source intelligence analysts and investigators
-- Professional penetration testers and red team operators
-
-Special recognition to those who risk personal and professional consequences to reveal state-sponsored cyber operations, enabling public awareness and democratic oversight of these powerful capabilities.
-
-## License
-
-MIT License with Security Addendum
-
-Copyright (c) 2025 Advanced Cyber Operations Research
-
-Permission granted for authorized educational and security testing purposes. Commercial use requires explicit written permission. See [LICENSE](LICENSE) for complete terms.
-
-## Contact
-
-- **Issues**: [GitHub Issues](https://github.com/NovusAevum/apt-adversarial-operations/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/NovusAevum/apt-adversarial-operations/discussions)
-- **Security**: Responsible disclosure for identified vulnerabilities
-- **Research**: Collaboration inquiries from academic institutions
+</div>
 
 ---
 
-**Repository Statistics**: 8,000+ total lines | 99% MITRE coverage | 14 production tools | 8 nation-state actors analyzed | January 2025 update
+## ⚠️ CRITICAL DISCLAIMER
 
-**Last Updated**: January 2025  
-**Status**: Active development and maintenance  
-**Focus**: Modern 2024-2025 operations with ongoing threat intelligence integration
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║  THIS REPOSITORY IS FOR EDUCATIONAL AND AUTHORIZED TESTING ONLY     ║
+║                                                                      ║
+║  Unauthorized access to computer systems is ILLEGAL under:          ║
+║  • Computer Fraud and Abuse Act (CFAA) - United States             ║
+║  • Computer Misuse Act 1990 - United Kingdom                        ║
+║  • Communications and Multimedia Act 1998 - Malaysia                ║
+║  • And equivalent laws worldwide                                    ║
+║                                                                      ║
+║  The author assumes NO responsibility for misuse of this content.   ║
+║  Always obtain explicit written authorization before testing.       ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
-*This repository documents sophisticated cyber operations for defensive improvement and public awareness. All users assume complete responsibility for usage in accordance with applicable laws and ethical standards.* enhancements and capability development
-- Detection rule improvements
-- Documentation clarity and accuracy
+## 🔥 Featured: Modern Cyber Warfare (2024-2025)
 
-### Contribution Standards
+This repository documents unprecedented modern operations including Israeli AI-driven warfare systems, the June 2025 Iran-Israel 12-day war, sophisticated supply chain operations, and Iranian adversarial capabilities systematically underestimated in public discourse.
 
-- Production-quality code with comprehensive error handling
-- Detailed documentation explaining operational context
-- Proper attribution and citations for techniques
-- Ethical compliance and legal adherence
-- Testing in isolated environments before submission
+**Quick Navigation to Modern Operations:**
+- 🤖 [Israeli AI Warfare Systems (Lavender, Gospel, Alchemist)](resources/advanced-apt-groups.md#israeli-operations) - First comprehensive public documentation
+- ⚔️ [June 2025 Iran-Israel 12-Day War](resources/advanced-apt-groups.md#june-2025-iran-israel-war) - Complete analysis with sources
+- 🇮🇷 [Iranian Offensive Capabilities](resources/advanced-apt-groups.md#iranian-operations) - Advanced techniques and sophistication
+- 📱 [2024 Hezbollah Pager Operation](resources/advanced-apt-groups.md#hezbollah-pager-operation) - Multi-year supply chain interdiction
+- 🎯 [Operation Stuxnet Technical Deep-Dive](resources/advanced-apt-groups.md#stuxnet) - Complete four zero-day analysis
+
+**Production-Grade Tools:**
+- [AI-Powered Reconnaissance System](tools/reconnaissance/ai_recon_system.py) - Gospel-inspired target intelligence
+- [Quantum Cryptography Toolkit](tools/utilities/quantum_crypto_toolkit.py) - Post-quantum resistant implementations
+- [Air-Gap Jumping Toolkit](tools/utilities/airgap_toolkit.py) - Four covert channel demonstrations
+- [Enterprise C2 Framework](tools/c2-framework/) - Production-ready command & control
+- [Complete Tool Suite](tools/) - 14 advanced operational tools
+
+**All claims cited in [SOURCES.md](SOURCES.md)** with academic-level references.
+
+---
+
+## 📋 Table of Contents
+
+- [Featured: Modern Cyber Warfare](#-featured-modern-cyber-warfare-2024-2025)
+- [Executive Summary](#executive-summary)
+- [APT Kill Chain Overview](#apt-kill-chain-overview)
+- [Production Tools & Capabilities](#-production-tools--capabilities)
+- [Repository Architecture](#repository-architecture)
+- [Phase-by-Phase Breakdown](#phase-by-phase-breakdown)
+- [Advanced C2 Infrastructure](#advanced-c2-infrastructure)
+- [MITRE ATT&CK Mapping](#mitre-attck-mapping)
+- [Real-World APT Case Studies](#real-world-apt-case-studies)
+- [Detection & Defense](#detection--defense)
+- [Prerequisites](#prerequisites)
+- [Installation & Setup](#installation--setup)
+- [Contributing](#contributing)
+- [Legal & Ethical Guidelines](#legal--ethical-guidelines)
+
+---
+
+## 🛠️ Production Tools & Capabilities
+
+### Reconnaissance & Intelligence
+
+**[AI-Powered Reconnaissance System](tools/reconnaissance/ai_recon_system.py)**
+Gospel-inspired target intelligence aggregation processing multi-source OSINT, demonstrating modern AI-driven targeting principles. Features automated threat scoring, graph-based relationship analysis, and intelligence dossier generation.
+
+**[Subdomain Enumeration](tools/reconnaissance/subdomain_enum.py)**
+Multi-threaded subdomain discovery with DNS brute-forcing, certificate transparency abuse, and cloud service detection.
+
+**[DNS Reconnaissance](tools/reconnaissance/dns_recon.py)**
+Advanced DNS intelligence gathering with zone transfer attempts, historical data analysis, and subdomain discovery.
+
+**[Port Scanner](tools/reconnaissance/port_scanner.py)**
+Network service discovery with SYN/ACK scanning, service fingerprinting, and evasion techniques.
+
+### Command & Control Infrastructure
+
+**[C2 Server](tools/c2-framework/c2_server.py)**
+Enterprise-grade command and control server with AES-256 encrypted communications, RSA key exchange, multi-agent management, task queueing, heartbeat monitoring, and comprehensive audit logging.
+
+**[Beacon/Agent](tools/c2-framework/beacon.py)**
+Lightweight agent implementation with encrypted check-ins, dynamic tasking, and anti-forensics capabilities.
+
+### Advanced Utilities
+
+**[Quantum Cryptography Toolkit](tools/utilities/quantum_crypto_toolkit.py)**
+Post-quantum cryptographic implementations including lattice-based encryption (CRYSTALS-Kyber inspired), hash-based signatures (Lamport), quantum RNG, and post-quantum key exchange resistant to quantum computer attacks.
+
+**[Air-Gap Jumping Toolkit](tools/utilities/airgap_toolkit.py)**
+Four covert channel implementations: acoustic (ultrasonic 18-22kHz), electromagnetic (TEMPEST-style), USB firmware (BadUSB), and thermal (CPU temperature modulation). Demonstrates how Stuxnet and similar operations cross air-gaps.
+
+**[Polymorphic Generator](tools/utilities/polymorphic_generator.py)**
+Dynamic payload generation creating unique signatures per execution for signature evasion.
+
+**[Log Cleaner](tools/utilities/log_cleaner.py)**
+Anti-forensics tool for Windows Event Log and Linux syslog manipulation, timestamp modification, and secure deletion.
+
+### Exploitation & Persistence
+
+**[Automated Exploitation](tools/exploitation/auto_exploit.py)**
+CVE-based automated vulnerability exploitation framework.
+
+**[Persistence Manager](tools/persistence/persistence_manager.py)**
+Multi-method persistence framework supporting registry manipulation, service creation, scheduled tasks, and advanced techniques.
+- [Repository Architecture](#repository-architecture)
+- [Phase-by-Phase Breakdown](#phase-by-phase-breakdown)
+- [Advanced C2 Infrastructure](#advanced-c2-infrastructure)
+- [MITRE ATT&CK Mapping](#mitre-attck-mapping)
+- [Real-World APT Case Studies](#real-world-apt-case-studies)
+- [Detection & Defense](#detection--defense)
+- [Prerequisites](#prerequisites)
+- [Installation & Setup](#installation--setup)
+- [Contributing](#contributing)
+- [Legal & Ethical Guidelines](#legal--ethical-guidelines)
+
+---
+
+## 🎓 Executive Summary
+
+This repository represents comprehensive, enterprise-grade documentation of Advanced Persistent Threat techniques, tactics, and procedures used by state-sponsored adversarial actors. Built from real-world experience with CEH v12 certification, extensive penetration testing, and deep analysis of threat intelligence from multiple nation-state actors including Russian, Chinese, North Korean, Iranian, US, and Israeli operations.
+
+This resource serves as educational material for security researchers, a defense blueprint for blue teams, a research platform for analyzing APT group behaviors, and a red team playbook for authorized offensive security operations.
+
+### Target Audience
+
+This documentation is designed for security researchers understanding APT methodology and attribution, red team operators executing advanced tradecraft during authorized engagements, blue team defenders building threat models and detection engineering capabilities, incident responders analyzing APT behaviors during forensic investigations, and security leaders conducting risk assessments and strategic defense planning.
+
+---
+
+## 🗡️ APT Kill Chain Overview
+
+The modern APT kill chain extends far beyond traditional cyber attacks, encompassing the complete adversarial lifecycle from initial target selection through final cleanup operations.
+
+```mermaid
+graph TB
+    A[Target Selection & Intelligence] --> B[Reconnaissance]
+    B --> C[Resource Development]
+    C --> D[Initial Access]
+    D --> E[Execution]
+    E --> F[Persistence]
+    F --> G[Privilege Escalation]
+    G --> H[Defense Evasion]
+    H --> I[Credential Access]
+    I --> J[Discovery]
+    J --> K[Lateral Movement]
+    K --> L[Collection]
+    L --> M[Command & Control]
+    M --> N[Exfiltration]
+    N --> O[Impact]
+    O --> P[Cleanup & Exit]
+    
+    style A fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px,color:#fff
+    style D fill:#ffd93d,stroke:#f59f00,stroke-width:3px,color:#000
+    style F fill:#51cf66,stroke:#2f9e44,stroke-width:3px,color:#fff
+    style M fill:#4dabf7,stroke:#1971c2,stroke-width:3px,color:#fff
+    style N fill:#da77f2,stroke:#9c36b5,stroke-width:3px,color:#fff
+    style P fill:#ffa94d,stroke:#d9480f,stroke-width:3px,color:#000
+```
+
+### Attack Surface Taxonomy
+
+```mermaid
+mindmap
+  root((APT Attack Surface))
+    External Infrastructure
+      Cloud Assets
+      Web Applications
+      Email Systems
+      VPN Endpoints
+    Internal Networks
+      Active Directory
+      File Servers
+      Database Systems
+      Workstations
+    Human Vectors
+      Spear Phishing
+      Social Engineering
+      Insider Threats
+      Supply Chain
+    Technical Vulnerabilities
+      Zero-Days
+      N-Days
+      Misconfigurations
+      Weak Credentials
+```
+
+---
+
+## 🏗️ Repository Architecture
+
+This repository follows a modular, phase-based architecture aligned with the MITRE ATT&CK framework. The structure provides comprehensive coverage of all attack phases with working tools, detection rules, lab environments, and real-world case studies.
+
+```
+apt-adversarial-operations/
+│
+├── 📘 docs/                          # Phase-based documentation
+│   ├── 01-reconnaissance/            # OSINT, scanning, enumeration
+│   ├── 02-initial-access/            # Entry techniques
+│   ├── 03-execution-persistence/     # Code exec & maintaining access
+│   ├── 04-privilege-escalation/      # Elevation of privileges
+│   ├── 05-defense-evasion/           # AV bypass, obfuscation
+│   ├── 06-credential-access/         # Cred dumping, Kerberos attacks
+│   ├── 07-discovery-lateral-movement/ # Network mapping, pivoting
+│   ├── 08-collection-exfiltration/   # Data theft techniques
+│   ├── 09-command-control/           # C2 infrastructure
+│   └── 10-impact-cleanup/            # Final objectives, forensics
+│
+├── 🛠️ tools/                         # Custom tooling & frameworks
+│   ├── reconnaissance/               # OSINT automation, scanners
+│   ├── exploitation/                 # Exploit development
+│   ├── persistence/                  # Implant & backdoor modules
+│   ├── c2-framework/                 # Custom C2 implementation
+│   └── utilities/                    # Helper scripts & automation
+│
+├── 📊 resources/                     # Reference materials
+│   ├── mitre-mapping.md              # ATT&CK technique mappings
+│   ├── apt-case-studies.md           # Real-world APT analysis
+│   ├── detection-rules.md            # SIEM/EDR detection signatures
+│   └── threat-intelligence.md        # IOCs, TTP analysis
+│
+└── 🧪 labs/                          # Practice environments
+    └── practice-scenarios/           # Hands-on lab exercises
+```
+
+---
+
+## 🔍 Phase-by-Phase Breakdown
+
+### Phase 1: Reconnaissance & Intelligence Gathering
+**MITRE Tactics**: Reconnaissance (TA0043)
+
+```mermaid
+flowchart LR
+    A[Passive OSINT] --> B{Target Profiling}
+    B --> C[DNS Enumeration]
+    B --> D[Social Media Intel]
+    B --> E[Certificate Transparency]
+    C --> F[Active Scanning]
+    D --> F
+    E --> F
+    F --> G[Service Fingerprinting]
+    G --> H[Vulnerability Assessment]
+    H --> I[Attack Surface Map]
+    
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style I fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
+```
+
+Reconnaissance forms the foundation of every successful APT operation, involving gathering intelligence about target infrastructure, personnel, and security posture without triggering defensive systems. Professional APT actors typically spend months in reconnaissance before launching their first attack.
+
+**Key Techniques** include passive OSINT through DNS records, WHOIS data, subdomain enumeration, and certificate transparency logs. Active scanning involves port scanning with evasion techniques, service version detection, and WAF/IDS identification. Human intelligence gathering focuses on LinkedIn scraping, email harvesting, and organizational structure mapping. Infrastructure mapping encompasses cloud asset discovery across AWS, Azure, and GCP, CDN detection, and third-party service enumeration.
+
+**Tools Covered**: Shodan, Censys, Amass, DNSRecon, theHarvester, Maltego, SpiderFoot, and custom automation scripts.
+
+📖 **[Read Full Documentation](docs/01-reconnaissance/README.md)**
+
+---
+
+### Phase 2: Initial Access
+**MITRE Tactics**: Initial Access (TA0001)
+
+```mermaid
+graph TD
+    A[Attack Vectors] --> B[Phishing]
+    A --> C[Public Exploit]
+    A --> D[Supply Chain]
+    A --> E[Valid Accounts]
+    
+    B --> B1[Spear Phishing]
+    B --> B2[Watering Hole]
+    C --> C1[Zero-Day]
+    C --> C2[N-Day Exploitation]
+    D --> D1[Software Supply Chain]
+    D --> D2[Hardware Implants]
+    E --> E1[Credential Stuffing]
+    E --> E2[Password Spraying]
+    
+    style B fill:#ff6b6b,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#ffd93d,stroke:#fff,stroke-width:2px,color:#000
+    style D fill:#da77f2,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#51cf66,stroke:#fff,stroke-width:2px,color:#000
+```
+
+Initial access represents the critical entry point into target environments. Modern APT groups employ sophisticated techniques ranging from highly targeted spear-phishing campaigns to complex supply chain compromises affecting thousands of organizations simultaneously.
+
+**Attack Vectors** encompass phishing operations including spear-phishing campaigns, credential harvesting pages, and payload delivery mechanisms. Exploitation techniques cover remote code execution vulnerabilities, service-level exploits, and web application attacks including SQL injection and remote file inclusion. Supply chain compromise involves targeting third-party software vendors, inserting hardware implants, and compromising update mechanisms. Valid account abuse includes credential stuffing attacks using breach databases, password spraying against corporate authentication systems, and session hijacking.
+
+📖 **[Read Full Documentation](docs/02-initial-access/README.md)**
+
+---
+
+### Phase 3: Execution & Persistence
+**MITRE Tactics**: Execution (TA0002), Persistence (TA0003)
+
+Execution and persistence are intertwined phases where adversaries run malicious code and establish mechanisms to maintain access across system reboots, credential changes, and security updates.
+
+**Execution Methods** include PowerShell with AMSI bypass techniques, Windows Command Shell and batch scripts, Unix shell exploitation through bash and zsh, Visual Basic macros and VBScript, Python-based payloads, JavaScript execution, WMI event subscriptions, scheduled tasks and cron jobs, DLL injection techniques, exploitation for client execution through browser and PDF exploits, inter-process communication via COM and DDE, native API calls, software deployment tool abuse, and user execution through social engineering.
+
+**Persistence Techniques** span registry manipulation including Run keys and WMI event subscriptions, service creation on Windows and Linux systems, DLL hijacking through search order manipulation, and advanced techniques including UEFI firmware persistence, hypervisor-level rootkits, and bootkit implants that survive disk formatting.
+
+📖 **[Read Full Documentation](docs/03-execution-persistence/README.md)**
+
+---
+
+### Phase 4: Privilege Escalation
+**MITRE Tactics**: Privilege Escalation (TA0004)
+
+```mermaid
+graph LR
+    A[User Level] -->|Exploit| B[Administrator]
+    B -->|Exploit| C[SYSTEM/Root]
+    C -->|Exploit| D[Kernel]
+    D -->|Exploit| E[Firmware/Hypervisor]
+    
+    style A fill:#ffcccc,stroke:#c62828,stroke-width:2px,color:#000
+    style B fill:#ffaaaa,stroke:#c62828,stroke-width:2px,color:#000
+    style C fill:#ff8888,stroke:#c62828,stroke-width:2px,color:#fff
+    style D fill:#ff6666,stroke:#c62828,stroke-width:2px,color:#fff
+    style E fill:#ff4444,stroke:#c62828,stroke-width:2px,color:#fff
+```
+
+Privilege escalation enables adversaries to gain higher-level permissions on compromised systems, moving from standard user access to administrator, SYSTEM, root, kernel, or even firmware-level control.
+
+**Windows Escalation Vectors** include UAC bypass techniques exploiting trusted Windows binaries, token manipulation and impersonation attacks, service exploitation through unquoted service paths and weak permissions, and kernel exploits targeting Windows privilege elevation vulnerabilities. **Linux Escalation** focuses on SUID binary exploitation, kernel vulnerabilities, container escape techniques, and sudo misconfigurations. **Network-Based Escalation** leverages Kerberos delegation attacks, NTLM relay for privilege elevation, and trust relationship exploitation across domain boundaries.
+
+📖 **[Read Full Documentation](docs/04-privilege-escalation/README.md)**
+
+---
+
+### Phase 5: Defense Evasion
+**MITRE Tactics**: Defense Evasion (TA0005)
+
+Defense evasion encompasses the sophisticated techniques adversaries use to avoid detection by antivirus software, endpoint detection and response systems, security information and event management platforms, and forensic analysis.
+
+**Anti-AV Techniques** include polymorphic and metamorphic malware that changes its code structure with each infection, in-memory execution that never touches disk, process injection methods including reflective DLL injection and process hollowing, and obfuscation through code packing and encryption. **Anti-Forensics** involves log deletion, timestomping to manipulate file modification times, fileless malware execution entirely in memory, and memory-only execution that leaves minimal forensic artifacts. **Anti-Sandbox** techniques detect virtual machine environments, implement time-based evasion delays, require user interaction before executing payloads, and detect analysis tools. **Network Evasion** utilizes domain fronting to hide C2 traffic, protocol tunneling through allowed services, encrypted C2 channels, and traffic masquerading as legitimate services.
+
+📖 **[Read Full Documentation](docs/05-defense-evasion/README.md)**
+
+---
+
+### Phase 6: Credential Access
+**MITRE Tactics**: Credential Access (TA0006)
+
+```mermaid
+flowchart TD
+    A[Credential Access] --> B[Memory Dumping]
+    A --> C[OS Credential Stores]
+    A --> D[Network Protocols]
+    A --> E[User Input Capture]
+    
+    B --> B1[LSASS Dumping]
+    B --> B2[Process Memory]
+    C --> C1[SAM Database]
+    C --> C2[NTDS.dit]
+    C --> C3[Browser Credentials]
+    D --> D1[Kerberoasting]
+    D --> D2[NTLM Relay]
+    D --> D3[SMB Capture]
+    E --> E1[Keylogging]
+    E --> E2[Form Grabbing]
+    
+    style B fill:#ff6b6b,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#ffd93d,stroke:#fff,stroke-width:2px,color:#000
+    style D fill:#51cf66,stroke:#fff,stroke-width:2px,color:#000
+    style E fill:#4dabf7,stroke:#fff,stroke-width:2px,color:#fff
+```
+
+Credential access represents one of the most valuable phases for APT actors, enabling lateral movement, privilege escalation, and long-term persistence through legitimate credentials.
+
+**Advanced Techniques** encompass Kerberos attacks including Kerberoasting to extract service account credentials, AS-REP roasting targeting accounts without Kerberos pre-authentication, Golden and Silver ticket forgery, and Skeleton Key attacks. NTLM exploitation includes Pass-the-Hash attacks, Pass-the-Ticket for Kerberos authentication, and NTLM relay attacks. Credential dumping techniques involve Mimikatz for in-memory credential extraction, ProcDump combined with offline parsing, direct LSASS access through Windows APIs, and DCSync attacks against domain controllers. Network capture methods include Responder for LLMNR and NBT-NS poisoning, and SMB relay attacks.
+
+📖 **[Read Full Documentation](docs/06-credential-access/README.md)**
+
+---
+
+### Phase 7: Discovery & Lateral Movement
+**MITRE Tactics**: Discovery (TA0007), Lateral Movement (TA0008)
+
+Discovery and lateral movement enable adversaries to map the network environment, identify high-value targets, and move between systems to achieve their objectives.
+
+**Discovery Methods** include Active Directory enumeration using PowerView and BloodHound for attack path analysis, domain reconnaissance to map trust relationships and forest structures, user and group enumeration to identify privileged accounts, computer enumeration to locate domain controllers and critical servers, network service scanning to identify accessible services, and file share discovery to locate sensitive data repositories.
+
+**Lateral Movement Techniques** encompass remote execution through PsExec, WMI, DCOM, and PowerShell Remoting, pivoting using port forwarding, SOCKS proxies, and SSH tunneling, and living off the land by abusing native Windows tools like WinRM, native Linux utilities, and administrative scripts that blend with legitimate activity.
+
+📖 **[Read Full Documentation](docs/07-discovery-lateral-movement/README.md)**
+
+---
+
+### Phase 8: Collection & Exfiltration
+**MITRE Tactics**: Collection (TA0009), Exfiltration (TA0010)
+
+```mermaid
+graph TB
+    A[Data Sources] --> B[Collection Methods]
+    B --> C[Staging]
+    C --> D[Compression & Encryption]
+    D --> E[Exfiltration Channels]
+    
+    A1[File Systems] --> A
+    A2[Databases] --> A
+    A3[Email] --> A
+    A4[Cloud Storage] --> A
+    
+    E --> E1[DNS Tunneling]
+    E --> E2[HTTPS Exfil]
+    E --> E3[Cloud Storage]
+    E --> E4[Steganography]
+    
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
+    style E fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+```
+
+Collection and exfiltration represent the culmination of APT operations where adversaries gather and extract targeted data from compromised environments.
+
+**Collection Techniques** include automated file system crawling to locate documents matching specific patterns, database querying and export, email collection from Exchange servers and mailboxes, screenshot and video capture, clipboard monitoring, browser history and credential theft, and cloud storage enumeration.
+
+**Exfiltration Channels** encompass DNS tunneling where data is encoded in DNS queries, HTTPS exfiltration disguised as legitimate web traffic, cloud storage abuse uploading data to attacker-controlled accounts, steganography hiding data in images or other media, ICMP tunneling through ping packets, and protocol tunneling through allowed services.
+
+📖 **[Read Full Documentation](docs/08-collection-exfiltration/README.md)**
+
+---
+
+### Phase 9: Command & Control
+**MITRE Tactics**: Command and Control (TA0011)
+
+Command and Control infrastructure forms the nervous system of APT operations, ensuring resilient communication, operational flexibility, and long-term access to compromised environments.
+
+```mermaid
+graph TB
+    subgraph "C2 Infrastructure Layers"
+        A[Operators] --> B[C2 Management Console]
+        B --> C[Redirectors/Proxies]
+        C --> D[Team Servers]
+        D --> E[Beacons/Implants]
+        
+        C --> C1[CDN/Domain Fronting]
+        C --> C2[Cloud Services]
+        C --> C3[Compromised Infra]
+        
+        D --> D1[HTTP/HTTPS]
+        D --> D2[DNS]
+        D --> D3[WebSockets]
+        D --> D4[Custom Protocols]
+    end
+    
+    subgraph "Target Environment"
+        E --> F[Victim Systems]
+        F --> G[Data Exfiltration]
+    end
+    
+    style B fill:#4dabf7,stroke:#fff,stroke-width:2px,color:#fff
+    style D fill:#ff6b6b,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#ffd93d,stroke:#fff,stroke-width:2px,color:#000
+    style G fill:#da77f2,stroke:#fff,stroke-width:2px,color:#fff
+```
+
+A robust C2 infrastructure provides resilience through redundant communication channels, stealth through traffic blending and encryption, flexibility for dynamic tasking and module loading, and persistence ensuring long-term access despite defensive actions.
+
+**C2 Frameworks Covered** include commercial solutions like Cobalt Strike and Brute Ratel C4, open source options including Metasploit Framework, Empire, Covenant, Mythic, and Sliver, as well as custom implementations built from scratch in Python, Go, Rust, and C#.
+
+**Advanced C2 Techniques** encompass sleep obfuscation with jitter to prevent pattern detection, malleable C2 profiles mimicking legitimate traffic, domain fronting and CDN abuse, DNS tunneling for covert channels, protocol tunneling through allowed services, and multi-stage C2 architectures with redundant fallback channels.
+
+📖 **[Read Full Documentation](docs/09-command-control/README.md)**
+
+---
+
+### Phase 10: Impact & Cleanup
+**MITRE Tactics**: Impact (TA0040)
+
+Impact and cleanup represent the final phases where adversaries achieve their mission objectives and attempt to cover their tracks to hinder forensic investigation and attribution.
+
+**Impact Operations** encompass data destruction through disk wiping and file encryption, service disruption via DDoS attacks and resource exhaustion, and mission-specific objectives including ransomware deployment, data manipulation, and system control for long-term intelligence gathering.
+
+**Anti-Forensics and Cleanup** techniques include log deletion and manipulation to remove evidence of compromise, timestomping to alter file metadata, secure file deletion using military-grade overwriting, memory dumping cleanup, registry cleanup, prefetch file deletion, and complete artifact removal across system, application, and security logs.
+
+📖 **[Read Full Documentation](docs/10-impact-cleanup/README.md)**
+
+---
+
+## 🏛️ Advanced C2 Infrastructure
+
+### Multi-Tier C2 Architecture
+
+```mermaid
+flowchart TB
+    subgraph "Tier 1: Operator Layer"
+        A[Red Team Operators]
+    end
+    
+    subgraph "Tier 2: Command Infrastructure"
+        B[C2 Management Console]
+        C[Team Server 1]
+        D[Team Server 2]
+        E[Team Server N]
+    end
+    
+    subgraph "Tier 3: Redirector Layer"
+        F[HTTP/HTTPS Redirector]
+        G[DNS Redirector]
+        H[Cloud Function Redirector]
+    end
+    
+    subgraph "Tier 4: Obfuscation Layer"
+        I[CDN/Domain Fronting]
+        J[Compromised Infrastructure]
+        K[Cloud Services]
+    end
+    
+    subgraph "Tier 5: Target Environment"
+        L[Beacons/Implants]
+        M[Compromised Systems]
+    end
+    
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    
+    C --> F
+    D --> G
+    E --> H
+    
+    F --> I
+    G --> J
+    H --> K
+    
+    I --> L
+    J --> L
+    K --> L
+    
+    L --> M
+    
+    style A fill:#4dabf7,stroke:#1971c2,stroke-width:3px,color:#fff
+    style B fill:#51cf66,stroke:#2f9e44,stroke-width:3px,color:#fff
+    style L fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px,color:#fff
+    style M fill:#ffd93d,stroke:#f59f00,stroke-width:3px,color:#000
+```
+
+### Infrastructure Components
+
+Team Servers provide the primary C2 backend and task management using technologies like Cobalt Strike, Covenant, Mythic, and custom implementations. Redirectors handle traffic obfuscation and operator protection through Apache mod_rewrite, Nginx, HAProxy, and Traefik configurations. Domain Fronting hides C2 traffic behind legitimate domains using CDN services and cloud providers. DNS C2 provides alternative communication channels through custom DNS servers and recursive queries. Cloud Functions enable serverless C2 components via AWS Lambda, Azure Functions, and GCP Functions.
+
+📖 **[Read Full C2 Infrastructure Guide](docs/09-command-control/c2-infrastructure.md)**
+
+---
+
+## 🎯 MITRE ATT&CK Mapping
+
+This repository comprehensively covers fourteen MITRE ATT&CK tactics and over one hundred eighty techniques, providing complete coverage of reconnaissance, resource development, initial access, execution, persistence, privilege escalation, defense evasion, credential access, discovery, lateral movement, collection, command and control, exfiltration, and impact phases.
+
+📊 **[View Complete MITRE Mapping](resources/mitre-mapping.md)**
+
+---
+
+## 🔬 Real-World APT Case Studies
+
+The repository includes detailed technical analysis of actual state-sponsored operations from APT28 Fancy Bear targeting government and military organizations, APT29 Cozy Bear's SolarWinds supply chain attack, Lazarus Group's Sony Pictures hack and WannaCry ransomware, APT41's dual espionage and financial operations, Equation Group's advanced NSA toolset, and Unit 8200's sophisticated cyber weapons.
+
+📖 **[Read Full Case Studies](resources/apt-case-studies.md)**
+
+---
+
+## 🛡️ Detection & Defense
+
+Each phase includes comprehensive detection strategies with Sigma rules for SIEM platforms, YARA signatures for malware detection, Suricata and Snort rules for network monitoring, EDR detection logic, and threat hunting queries for proactive defense.
+
+📖 **[Full Detection Engineering Guide](resources/detection-rules.md)**
+
+---
+
+## 📋 Prerequisites
+
+Technical knowledge requirements include advanced networking understanding, expert-level operating system internals, advanced programming skills, expert security concepts, and intermediate cloud platform knowledge. Software requirements include Python 3.9+, PowerShell 7.x, Docker and Docker Compose, virtual machine software, Burp Suite Professional, Wireshark, Metasploit Framework, and Cobalt Strike or open-source alternatives.
+
+---
+
+## 🚀 Installation & Setup
+
+Quick start instructions include cloning the repository, setting up a Python virtual environment, installing dependencies, running automated lab setup, and verifying the installation. Docker-based lab environments provide complete APT simulation infrastructure with Kali Linux workstations, vulnerable targets, C2 infrastructure, and SIEM dashboards.
+
+---
+
+## 🎯 Learning Path
+
+The repository provides structured learning paths from beginner through expert levels, covering fundamentals of networking and protocols, basic reconnaissance techniques, understanding vulnerability exploitation, advanced enumeration and OSINT, custom exploit development, privilege escalation techniques, building custom C2 frameworks, advanced persistence mechanisms, defense evasion and anti-forensics, zero-day research and development, advanced memory manipulation, kernel-level exploitation, firmware and hardware attacks, and full-scope APT campaign simulation.
+
+---
+
+## 🔐 Legal & Ethical Guidelines
+
+Explicit written authorization is required before testing any system. The repository emphasizes ethical hacking principles including obtaining proper authorization, minimizing impact, maintaining confidentiality, reporting responsibly, respecting privacy, and staying within legal boundaries.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome with guidelines requiring enterprise-grade code quality, comprehensive documentation, proper attribution, ethical adherence, and testing in isolated lab environments before submission.
 
 ---
 
 ## 📚 Additional Resources
 
-### Essential Reading
-
-- **Red Team Field Manual** - Practical reference for operators
-- **The Hacker Playbook 3** - Modern penetration testing techniques
-- **Advanced Penetration Testing** - Sophisticated offensive operations
-- **Operator Handbook** - Red team tactics and procedures
-
-### Online Resources
-
-- **MITRE ATT&CK Framework**: [attack.mitre.org](https://attack.mitre.org/)
-- **NIST Cybersecurity Framework**: [nist.gov/cyberframework](https://www.nist.gov/cyberframework)
-- **OWASP Testing Guide**: [owasp.org](https://owasp.org/www-project-web-security-testing-guide/)
-
-### Training Platforms
-
-- **HackTheBox**: [hackthebox.com](https://www.hackthebox.com/)
-- **TryHackMe**: [tryhackme.com](https://tryhackme.com/)
-- **Offensive Security Labs**: [offensive-security.com](https://www.offensive-security.com/)
+The repository references essential books including Red Team Field Manual, The Hacker Playbook 3, Advanced Penetration Testing, and Operator Handbook. Online resources include the MITRE ATT&CK Framework, NIST Cybersecurity Framework, OWASP Testing Guide, and Red Team Development and Operations. Training platforms include HackTheBox, TryHackMe, Offensive Security Labs, PentesterLab, and SANS Cyber Ranges.
 
 ---
 
-## 📖 Citations & Sources
+## 📜 License
 
-This repository is built on publicly available information, leaked documents, academic research, and operational analysis. Key sources include:
-
-### September 2025 Iran-Israel Conflict
-- International news agencies reporting on the conflict
-- Military analysts' assessments of cyber-kinetic operations
-- Open-source intelligence from social media and satellite imagery
-- Security researchers analyzing the conflict's cyber components
-
-### Israeli AI Warfare Systems
-- Investigative journalism reports on Gospel, Lavender, and Alchemist systems
-- Whistleblower accounts from Israeli intelligence personnel
-- Academic papers on AI in military targeting
-- Human rights organizations documenting operational impacts
-
-### APT Operations
-- MITRE ATT&CK framework documentation
-- Threat intelligence reports from cybersecurity firms
-- Government cybersecurity advisories
-- Academic research on nation-state cyber operations
-- Forensic analysis reports from security incidents
-
-### Technical Specifications
-- CVE databases for vulnerability information
-- Security tool documentation
-- Academic papers on cryptography and exploitation techniques
-- Open-source security research
-
-**Note**: Specific source citations are provided throughout the detailed documentation in the `docs/` and `resources/` directories where claims are made.
+This project is licensed under the MIT License for educational use only, with permission granted for educational, research, and authorized testing purposes.
 
 ---
 
 ## 👤 Author & Acknowledgments
 
 **Wan Mohamad Hanis bin Wan Hassan**
+- CEH v12 Certified Ethical Hacker
+- 100+ Professional Certifications (Google, IBM, EC-Council, Cisco, HubSpot)
+- Security Researcher | Red Team Operator | AI/ML Specialist
+- OSINT & Adversarial Tradecraft Expert
 
-- **Certifications**: CEH v12 Certified Ethical Hacker + 100+ Professional Certifications
-- **Specializations**: State-Sponsored Adversarial Operations | Advanced Threat Intelligence | AI/ML Security | OSINT
-- **Expertise**: Red Team Operations | Blue Team Defense | Cyber Warfare Analysis
-
-### Connect
-
-- **LinkedIn**: [linkedin.com/in/wanmohamadhanis](https://linkedin.com/in/wanmohamadhanis)
-- **GitHub**: [github.com/novusaevum](https://github.com/novusaevum)
-- **Credly**: [credly.com/users/triumphanthanis](https://credly.com/users/triumphanthanis)
-- **Portfolio**: [wanmohamadhanis.my.canva.site/wmh-portfolio](https://wanmohamadhanis.my.canva.site/wmh-portfolio)
-
-### Acknowledgments
-
-This work builds upon research and intelligence from:
-- **MITRE Corporation** for the ATT&CK framework
-- **Global threat intelligence community** sharing operational insights
-- **Security researchers** publishing vulnerability and exploitation research
-- **Whistleblowers** revealing state-sponsored cyber operations
-- **Academic institutions** advancing cybersecurity research
-- **Open-source intelligence analysts** documenting modern conflicts
-
-Special recognition to those who risk their careers and safety to expose state-sponsored cyber operations, enabling public awareness and democratic oversight of these powerful capabilities.
+Connect via LinkedIn at linkedin.com/in/wanmohamadhanis, GitHub at github.com/novusaevum, Credly at credly.com/users/triumphanthanis, and portfolio at wanmohamadhanis.my.canva.site/wmh-portfolio.
 
 ---
 
@@ -473,19 +644,12 @@ Special recognition to those who risk their careers and safety to expose state-s
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
-║  This repository documents techniques that can cause serious harm   ║
-║  if misused. The knowledge contained here is provided to improve    ║
-║  defensive capabilities and public understanding of modern cyber    ║
-║  warfare, not to enable malicious activity.                         ║
-║                                                                      ║
-║  Every technique documented here is ALREADY being used by           ║
-║  nation-state actors. Secrecy doesn't make us safer—understanding   ║
-║  does. But understanding requires responsibility.                   ║
+║  This repository contains advanced adversarial techniques that      ║
+║  can cause significant harm if misused.                             ║
 ║                                                                      ║
 ║  USE RESPONSIBLY. USE ETHICALLY. USE LEGALLY.                       ║
 ║                                                                      ║
-║  "The best defense is understanding the offense. The best offense   ║
-║   is ethical restraint."                                            ║
+║  "With great power comes great responsibility."                     ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
@@ -494,181 +658,14 @@ Special recognition to those who risk their careers and safety to expose state-s
 
 <div align="center">
 
-### 🌟 Star this repository to support continued development 🌟
+**⭐ Star this repository to support continued development ⭐**
 
-**This repository represents thousands of hours of research, analysis, and documentation.**
+**Built with precision by security researchers, for security professionals**
 
-**Built with precision for security professionals who demand excellence.**
+</div>
 
 ---
 
 **Last Updated**: January 2025  
-**Repository Version**: 2.0.0  
-**Status**: Active Development & Maintenance
-
----
-
-*"In the shadows of cyberspace, knowledge is the only light. This repository illuminates what has remained hidden—not to enable harm, but to enable defense, understanding, and informed discourse about the realities of modern cyber warfare."*
-
-</div>
-
----
-
-## 📊 Repository Statistics
-
-```
-Documentation Coverage:
-├── Total Documentation: 8,000+ lines
-├── Phase Documentation: 10 complete phases
-├── APT Groups Analyzed: 8 nation-states
-├── Real-World Operations: 15+ documented
-├── Modern Conflicts: 2024-2025 operations
-└── MITRE ATT&CK: 225/227 techniques (99%)
-
-Operational Tools:
-├── Production-Grade Tools: 14
-├── AI-Powered Systems: 2
-├── Cryptographic Tools: 1
-├── C2 Framework: Complete
-└── Advanced Utilities: 4
-
-Intelligence Resources:
-├── Case Studies: 8 detailed analyses
-├── Detection Rules: 35+ signatures
-├── Threat Intelligence: Continuous updates
-└── Attribution Analysis: Multi-source
-
-Quality Metrics:
-├── Code Quality: Enterprise-grade
-├── Documentation Depth: Unprecedented
-├── Citation Standards: Academic-level
-├── Operational Context: Real-world
-└── Educational Value: Comprehensive
-```
-
----
-
-## 🎯 What Sets This Repository Apart
-
-### Not Just Another Pentesting Collection
-
-Most cybersecurity repositories provide tools and basic tutorials. This repository provides **understanding**. The difference between knowing how to use Mimikatz and understanding why LSASS credential dumping works at the Windows architecture level. Between running a C2 framework and understanding why multi-tier infrastructure protects operator anonymity.
-
-### Historical Documentation
-
-This repository documents techniques and operations that will be studied by security professionals, military strategists, and historians for decades. The September 2025 Iran-Israel conflict. Israeli AI warfare systems. Modern supply chain interdiction. These aren't theoretical—they happened, and they changed warfare forever.
-
-### Educational Philosophy
-
-Every concept is explained assuming the reader has intelligence but not necessarily expertise. Technical depth without gatekeeping. Sophisticated analysis without condescension. Real-world context without sanitization.
-
-### Continuous Evolution
-
-Cyber warfare doesn't stop. Neither does this repository. As new techniques emerge, as conflicts evolve, as technology advances—this documentation evolves with it.
-
----
-
-## 🔮 Future Roadmap
-
-### Planned Additions
-
-**Technical Depth Expansion**
-- Mobile platform exploitation (iOS/Android state-sponsored techniques)
-- IoT/OT security in critical infrastructure
-- 5G network exploitation methodologies
-- Blockchain and cryptocurrency operations
-- AI/ML model poisoning and adversarial techniques
-
-**Modern Conflict Analysis**
-- Ongoing cyber operations analysis
-- Attribution methodology documentation
-- Geopolitical cyber warfare trends
-- Emerging nation-state capabilities
-
-**Advanced Tools**
-- Additional AI-powered automation systems
-- More post-quantum cryptographic implementations
-- Advanced persistence mechanisms
-- Novel exfiltration channels
-
-**Educational Content**
-- Video tutorial series
-- Interactive lab environments
-- Capture-the-flag style challenges
-- Real-world simulation scenarios
-
----
-
-## 💬 Community
-
-This repository serves a global community of security professionals committed to understanding and defending against advanced threats.
-
-### How to Engage
-
-- **Issues**: Report broken links, request clarifications, suggest improvements
-- **Discussions**: Share insights, ask questions, propose new content
-- **Pull Requests**: Contribute tools, documentation, or analysis
-- **Citations**: If you reference this work, proper attribution is appreciated
-
-### Community Guidelines
-
-- **Respect**: Treat all community members professionally
-- **Ethics**: Maintain ethical standards in all discussions
-- **Quality**: Contribute high-quality, well-researched content
-- **Legality**: Never share information about illegal activities
-- **Attribution**: Credit sources and researchers appropriately
-
----
-
-## 📜 License
-
-MIT License with Security Addendum
-
-Copyright (c) 2025 Wan Mohamad Hanis bin Wan Hassan
-
-Permission is granted for educational and authorized security testing purposes. This software and documentation may be freely used, modified, and distributed for:
-
-- Educational purposes in accredited institutions
-- Authorized penetration testing with written permission
-- Security research and defensive capability development
-- Academic research and publication
-
-**Prohibited Uses:**
-- Unauthorized access to computer systems
-- Malicious purposes or criminal activity
-- Activities violating local, national, or international law
-- Privacy violations or unauthorized surveillance
-
-Commercial use requires explicit written permission from the copyright holder.
-
-See [LICENSE](LICENSE) file for complete terms.
-
----
-
-<div align="center">
-
-## ⭐ Support This Project ⭐
-
-If this repository has helped your research, improved your defensive capabilities, or enhanced your understanding of modern cyber warfare:
-
-**Star this repository** to increase visibility and support continued development
-
-**Share with colleagues** who would benefit from this knowledge
-
-**Contribute** your own insights and analysis
-
-**Cite properly** when referencing this work in your research
-
----
-
-### 🔥 This Repository is Your Tactical Advantage 🔥
-
-**Built by practitioners for practitioners**
-
-**Maintained with rigor. Updated with urgency. Shared with purpose.**
-
----
-
-**Repository**: [github.com/NovusAevum/apt-adversarial-operations](https://github.com/NovusAevum/apt-adversarial-operations)
-
-</div>
+**Repository Version**: 1.0.0  
+**Maintained By**: Wan Mohamad Hanis bin Wan Hassan
